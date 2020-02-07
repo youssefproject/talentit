@@ -1,0 +1,40 @@
+<div class="container container-fluid m-t-50 registration-type">
+  <div class="text-center">
+
+    <h1>Welcome to boostevents!</h1>
+    <h1>Choose the role that best describe your position</h1>
+
+
+  </div>
+</div>
+
+<!--- Cards -->
+<div class="container-fluid padding registration-type m-t-40">
+  <div class="row  text-center padding d-flex justify-content-center">
+
+    <div class=" col-sm-8 col-md-8 col-lg-6 col-xl-4 d-flex justify-content-center">
+
+      <div class="card-registration fluid-container">
+        <img class="card-img-top" src="../../../../assets/images/brand.png">
+        <div class="card-body">
+          <h5 class="card-title registration-choice-title">I am a brand</h5>
+          <p class="registration-choice-desc  "> Create your profile, send invitation and book celebrities!</p>
+          <a [routerLink]="['/auth/reg-brand/']" class="btn btn-primary-registration btn-sm ">Get started</a>
+        </div>
+      </div>
+    </div>
+
+    <div class=" col-sm-8 col-md-8 col-lg-6 col-xl-4 d-flex justify-content-center">
+      <div class="card-registration fluid-container ">
+        <img class="card-img-top celebrity" src="../../../../assets/images/celebrities.png">
+        <div class="card-body">
+          <h5 class="card-title registration-choice-title">I am a Influencer</h5>
+          <p class="registration-choice-desc"> Create your profile, send invitation and book celebrities!</p>
+          <a [routerLink]="['/home/']" class="btn btn-primary-registration btn-sm ">Get started</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>

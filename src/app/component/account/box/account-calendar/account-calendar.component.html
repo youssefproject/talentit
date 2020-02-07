@@ -1,0 +1,44 @@
+<div class="inbox-box editprofile-box">
+<div class="col-md-12">
+    <div class="white-box">
+      <div id="calendar">
+        <div class="card">
+          <div class="card-header">
+            <app-mwl-utils-calendar-header
+              [(view)]="view"
+              [(viewDate)]="viewDate">
+            </app-mwl-utils-calendar-header>
+          </div>
+          <div class="card-block">
+            <div [ngSwitch]="view">
+              <mwl-calendar-month-view
+                *ngSwitchCase="'month'"
+                [viewDate]="viewDate"
+                [events]="events"
+                [activeDayIsOpen]="activeDayIsOpen"
+                [refresh]="refresh"
+                [activeDayIsOpen]="activeDayIsOpen"
+                (dayClicked)="dayClicked($event.day)"
+                (eventTimesChanged)="eventDropped($event)">
+              </mwl-calendar-month-view>
+              <mwl-calendar-week-view
+                *ngSwitchCase="'week'"
+                [viewDate]="viewDate"
+                [events]="events"
+                [refresh]="refresh"
+                (eventTimesChanged)="eventDropped($event)">
+              </mwl-calendar-week-view>
+              <mwl-calendar-day-view
+                *ngSwitchCase="'day'"
+                [viewDate]="viewDate"
+                [events]="events"
+                [refresh]="refresh"
+                (eventTimesChanged)="eventDropped($event)">
+              </mwl-calendar-day-view>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

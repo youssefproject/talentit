@@ -1,0 +1,96 @@
+.login-left-site {
+    background-color: white;
+    height: 100vh;
+    position: relative;
+}
+
+.login-center-vertically {
+    position: absolute;
+    top: 50%;
+    transform: perspective(1px) translateY(-50%);
+    width: 100%;
+    left: 0;
+    padding: 3rem;
+}
+
+.login-right-site {
+    margin: 0;
+    padding: 0;
+    background: #CEEAF5;
+}
+
+.login-right-site img {
+    position: absolute;
+    bottom: 0;
+}
+
+.login-title {
+    padding-bottom: 2rem;
+    font-size: 30px;
+    color: #393939;
+}
+
+.login-desc {
+    font-size: 18px;
+    color: #404040;
+    font-family: "AvenirNext Medium"
+}
+
+.login-link {
+    color: #4CBAD7;
+    font-size: 18px;
+    font-family: "AvenirNext Medium";
+    text-decoration: underline;
+}
+
+.login-label {
+    color: #404040;
+    font-size: 18px;
+}
+
+.login-form-control {
+    background: #FAFFBD;
+    height: 55px;
+    border-radius: 6px;
+}
+
+.input-group>.form-control:not(:last-child),
+.input-group>.custom-select:not(:last-child) {
+    border-radius: 6px;
+}
+
+.login-form-control:focus {
+    border-color: #52BAD5;
+    background: #FAFFBD;
+}
+
+.login-button {
+    color: white;
+    background: #54D5FF;
+    border-radius: 6px;
+    width: 100%;
+    border: none;
+}
+
+.login-button:hover {
+    background: #36B8E3;
+}
+
+.login-message {
+    padding-left: 5%;
+    padding-top: 8%;
+    font-size: 30px;
+    width: 55%;
+}
+
+.login-message-desc {
+    font-family: "AvenirNext Medium";
+    font-size: 24px;
+}
+
+.login-learn-more {
+    border: solid 3px #2B2B2B;
+    font-size: 16px;
+    border-radius: 6px;
+    color: black;
+}

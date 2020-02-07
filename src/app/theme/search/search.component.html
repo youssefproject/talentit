@@ -1,0 +1,116 @@
+<ng2-toasty [position]="position"></ng2-toasty>
+<div class="line-fullscreen">
+
+
+  <div class="pcoded-wrapper">
+    <div class="pcoded-content">
+      <div class="pcoded-inner-content">
+        <!-- Main-body start -->
+        <div class="main-body">
+          <div class="page-wrapper">
+
+            <form #searchForm="ngForm" (ngSubmit)="onSubmit(searchForm)">
+              <div class="row search-box  padding   ">
+
+                <div class="col-lg-9">
+                  <div class="row">
+                    <!--div class="search-select-box col-lg-3">
+                      <input   type="text" class="form-control search-select" placeholder="Nom de l'influenceur" >
+                      <!--input  #query (keyup)="searchByName(query.value)" type="text" class="form-control search-select" placeholder="Nom de l'influenceur" -->
+                    <!--/div-->
+
+                    <div class="search-select-box col-lg-3 form-control-success">
+
+                      <select class="search-select form-control form-control-success " name="name" #name="ngModel" [(ngModel)]="this.gender">
+
+                        <option value=0>Tout le monde</option>
+                        <option value=2>Homme</option>
+                        <option value=1>Femme</option>
+
+                      </select>
+                    </div>
+                    <div class="search-select-box col-lg-3">
+
+                      <select name="select" class="search-select form-control" id="region" name="region">
+                        <option value="opt1">Dans ma région</option>
+                        <option value="opt2">Auvergne-Rhône-Alpes</option>
+                        <option value="opt3">Bourgogne-Franche-Comté</option>
+                        <option value="opt4">Bretagne</option>
+                        <option value="opt5">Centre-Val de Loire</option>
+                        <option value="opt6">Corse</option>
+                        <option value="opt7">Grand Est</option>
+                        <option value="opt8">Hauts-de-France</option>
+                        <option value="opt9">Île-de-France</option>
+                        <option value="opt10">Normandie</option>
+                        <option value="opt11">Nouvelle-Aquitaine</option>
+                        <option value="opt12">Occitanie</option>
+                        <option value="opt13">Pays de la Loire</option>
+                        <option value="opt14">Provence-Alpes-Côte d'Azur</option>
+
+                      </select>
+                    </div>
+                    <div class="search-select-box col-lg-2 form-group">
+
+                      <input class="form-control search-select" placeholder="Disponible" [(ngModel)]="this.dispo" type="text" onfocus="(this.type='date')">
+
+
+
+                    </div>
+                    <div class="search-select-box col-lg-2">
+                      <div>
+                        <input class="form-control search-select" placeholder="Tous les prix" [(ngModel)]="this.prixmax" type="number" min="0" max="8000">
+                      </div>
+
+                      <div class="search-select-red">{{messageError}}</div>
+
+                    </div>
+                  </div>
+                </div>
+
+                <div class="search-select-box col-lg-3  d-flex justify-content-center">
+
+                  <div class="row">
+
+                    <div class="col-6 justify-content-center float-right">
+                      <button class="btn btn-secondary search-select search-btn" (click)="onSubmit(searchForm)">
+                        Rechercher
+                      </button>
+
+
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+
+
+            </form>
+
+
+
+
+
+
+            <div class="row row-search-h2">
+              <h3 class="float-left search-box-h2"> {{this.people.length}} personnes correspendent à votre recherche </h3>
+            </div>
+
+
+
+            <div class="row compo-profile">
+
+              <app-profile-box *ngFor="let guest of people" class="col-lg-3 col-md-6 " eventId={{idE}} BEuserId={{guest.id}} name="{{guest.get('name')}}"
+                userId="{{guest.get('guest').id}}" image="{{guest.get('avatar')._url}}" [searchComponent]="this"></app-profile-box>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>

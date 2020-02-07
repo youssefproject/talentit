@@ -1,0 +1,32 @@
+<li (clickOutside)="notificationOutsideClick('live')" class="header-notification" [ngClass]="liveNotificationClass" (click)="toggle()">
+  <a href="javascript:">
+    <i class="ti-notif"></i>
+
+    <span class="bg-c-pink">
+      {{notifs.length}}
+    </span>
+  </a>
+
+
+  <ul [@notificationBottom]="liveNotification" class="show-notification">
+    <div class="notif-style">
+      <li>
+        <div class="notif_title">Notifications</div>
+        <!--<label class="label label-danger">New</label>-->
+      </li>
+
+
+      <li *ngFor="let notif of (notifs ? notifs.slice(0,5): [])">
+        <div class="media">
+          <img class="d-flex align-self-center img-radius" src="{{ notif.who.avatar._url }}" alt="Generic placeholder image">
+          <!-- <img class="d-flex align-self-center img-radius" src="{{ notif.who.avatar }}" alt="Generic placeholder image"> -->
+          <div class="media-body">
+            <p class="notification-msg">
+              <span class="usernam-notif">{{notif.who.name}}</span> {{ notif.message }}</p>
+            <span class="notification-time">Il y a {{ notif.date | daysAgo }}</span>
+          </div>
+        </div>
+      </li>
+    </div>
+  </ul>
+</li>

@@ -1,0 +1,116 @@
+.brandreg-booker {
+    background: #FE4869;
+}
+.brandreg-box {
+    color: white;
+    width: 100%;
+    margin-top: 40px;
+    padding: 50px;
+    border-radius: 8px;
+    font-size: 18px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    cursor: pointer; //margin-left: 1px;
+}
+
+.brandreg-particulier {
+    background: #676CE2;
+}
+
+.brandreg-entreprise {
+    background: rgb(209, 209, 110);
+}
+
+
+.brandreg-desc {
+    padding-top: 60px;
+}
+.brandreg-img{
+    //margin-top: 30px;
+    //text-align: center;
+    cursor: pointer;
+    
+}
+/*.brandreg-img {
+   // max-width: 100%;
+}*/
+.brandreg-input{
+    max-width: 100%;
+    width: 100%;
+    
+    padding: 17px 12px;
+    margin-top: 40px;
+}
+.brandreg-row-padding{
+    padding-top: 30px;
+
+}
+.brandreg-click-paddig{
+    padding-top: 30px;
+}
+
+
+.brandreg-desc-enterprise {
+    padding-top: 80px;
+}
+
+.brandreg-desc-booker {
+    padding-top: 50px;
+}
+
+.brandreg-desc-particulier {
+    padding-top: 50px;
+}
+.brandreg-button{
+    border-radius: 30px;
+    padding: 10px 35px;
+    //background-color: #F3177C; 
+    //color: #D73F21 ;
+
+}
+.brandreg-click-paddig{
+    padding-top: 70px;
+  
+}
+.brandreg-p{
+    font-size: 18px; 
+}
+.brandreg-warning-red{
+    padding-top: 20px;
+    color: red;
+    font-family: "AvenirNext Demi";
+}
+
+
+.brandreg-rounded{
+    overflow:hidden;
+    -webkit-border-radius:50px;
+    -moz-border-radius:50px;
+    border-radius:50px;
+    width:50px;
+    height:50px;
+    //border-color: #AFAFAF;
+    color: #AFAFAF;
+    border: solid 3px;
+    //border-color: #E9383F;
+    text-align: justify;
+    padding: 12px;
+    //background-color: #E9383F; 
+}
+
+.brandreg-rounded-ti{
+    overflow:hidden;
+    -webkit-border-radius:50px;
+    -moz-border-radius:50px;
+    border-radius:50px;
+    width:50px;
+    height:50px;
+    border-color: #AFAFAF;
+    color: #AFAFAF;
+    border-color: #EE1010;
+    //border: solid 3px;
+    text-align: justify;
+    padding: 15px;
+
+    background-color: #EE1010; 
+}

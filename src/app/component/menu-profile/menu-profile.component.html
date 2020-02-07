@@ -1,0 +1,28 @@
+<ul [@notificationBottom]="profileNotification" class="show-notification profile-notification">
+  <li>
+    <a href="javascript:">
+      <i class="ti-settings"></i> Settings
+    </a>
+  </li>
+  <li>
+    <a [routerLink]="['/user/profile/']">
+      <i class="ti-user"></i> Profile
+    </a>
+  </li>
+  <li>
+    <a [routerLink]="['/email/inbox/']">
+      <i class="ti-email"></i> My Messages
+    </a>
+  </li>
+  <li>
+    <a href="javascript:" appToggleFullScreen>
+      <i class="ti-full"></i> Full Screen
+    </a>
+  </li>
+  <li>
+    <a href="javascript:" (click)="logout()">
+      <i class="ti-settings"></i> Logout
+    </a>
+  </li>
+
+</ul>

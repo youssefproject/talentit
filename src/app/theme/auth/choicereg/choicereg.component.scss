@@ -1,0 +1,56 @@
+.registration-type h1 {
+	font-size: 32px;
+}
+
+.card-registration {
+	float: none;
+	border-radius: 12px;
+	box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.1);
+	overflow: hidden;
+}
+
+.card-registration img {
+	height: 40vh;
+	object-fit: contain;
+}
+
+.registration-choice-title {
+	font-size: 30px;
+}
+
+.registration-choice-desc {
+	font-size: 25px;
+	font-family: "AvenirNext Medium"
+}
+
+/*.celebrity{
+    
+        position: absolute; 
+        bottom: 100px; 
+        right: 10px; 
+        
+}*/
+
+.card-text {
+	font-size: 100%;
+	font-weight: 400;
+	padding-bottom: 1rem;
+}
+
+.btn-primary-registration {
+	background-color: #F92D73;
+	border: none;
+	padding: 10px 40px;
+	font-size: 18px;
+	border-radius: 10px;
+	color: white;
+}
+
+.btn-primary-registration:hover {
+	background-color: #E02465;
+}
+
+.celebrity {
+	padding-left: 20px;
+	padding-top: 20px;
+}

@@ -1,0 +1,75 @@
+<div class="line-fullscreen">
+  <div class="editprofile-headerfull-back">
+
+  </div>
+  <div class="editprofile-headerfull">
+
+    <div class="editprofil-avatar">
+
+      <div class="editprofil-avatar-img">
+        <img src="{{theUser.get('avatar')._url}}" />
+      </div>
+      <div class="editprofil-title">Mon profil</div>
+    </div>
+
+  </div>
+  <div class="editprofile-line"></div>
+  <div class="pcoded-wrapper">
+    <div class="pcoded-content">
+      <div class="pcoded-inner-content">
+        <!-- Main-body start -->
+        <div class="main-body">
+          <div class="page-wrapper">
+
+
+
+            <div class="row">
+              <div class="col-3 inbox-menu">
+                <ul>
+                  <li [ngClass]="{selected: actualRoute=='general' || actualRoute==''}" [routerLink]="['/profile/edit/general']">
+                    Général
+                  </li>
+                  <li [ngClass]="{selected: actualRoute==='contract'}" [routerLink]="['/profile/edit/contract']">
+                    Condition contrat
+                  </li>
+                  <li [ngClass]="{selected: actualRoute==='calendar'}" [routerLink]="['/profile/edit/calendar']">
+                    Calendrier
+                  </li>
+                  <li [ngClass]="{selected: actualRoute==='press'}" [routerLink]="['/profile/edit/press']">
+                    Dossier presse
+                  </li>
+                </ul>
+              </div>
+              <div class="col-8">
+                <div *ngIf="actualRoute==='general' || actualRoute===''">
+                  <app-account-profile-picture></app-account-profile-picture>
+                  <app-account-coordonne></app-account-coordonne>
+                </div>
+                <div *ngIf="actualRoute==='contract'">
+                  <span>Pour les contrats</span>
+                </div>
+                <div *ngIf="actualRoute==='calendar'">
+                    <app-account-calendar></app-account-calendar>
+                </div>
+                <div *ngIf="actualRoute==='press'">
+                  <span>Pour la presse</span>
+                </div>
+
+
+
+
+              </div>
+            </div>
+
+
+
+
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

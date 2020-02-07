@@ -1,0 +1,8 @@
+<div class="quick-buttons">
+    <div *ngIf="router.url != '/quick-start' && !isGuest" class="quick-new quick-button" [routerLink]="['/quick-start/']">
+        <img src="assets/images/newEventButton@3x.png" height="23">
+    </div>
+    <div class="quick-help quick-button">
+        <img src="assets/images/helpButton@3x.png" height="23">
+    </div>
+</div>

@@ -1,0 +1,111 @@
+<div class="line-fullscreen">
+
+
+  <div class="pcoded-wrapper">
+    <div class="pcoded-content">
+      <div class="pcoded-inner-content">
+        <!-- Main-body start -->
+        <div class="main-body">
+          <div class="page-wrapper">
+
+
+            <div *ngIf="idE" class="row m-t-20">
+              <div class="line_warning_filter col-3">
+                <div class="small-close" [routerLink]="['/'+actualRoute+'/']">
+                  <img src="assets/images/small-close@2x.png" height="22" />
+                </div>
+                <div class="row">
+
+                  <div class="col-8 warning-text m-t-20 p-l-30">
+                    <div class="warning-title">Filtre sur un évènement</div>
+                  </div>
+
+
+
+                </div>
+
+              </div>
+              <app-quick-event-box *ngIf="theEvent" eventName="{{theEvent.name}}" eventPlace="{{theEvent.place}}"></app-quick-event-box>
+            </div>
+            <div *ngIf="!idE" class="inbox-empty">
+
+            </div>
+
+
+            <div class="row">
+              <div class="col-3 inbox-menu">
+                <ul>
+                  <li [ngClass]="{selected: actualRoute=='inbox' || actualRoute==''}" [routerLink]="['/inbox/',idE]">
+                    Inbox
+                  </li>
+                  <li [ngClass]="{selected: actualRoute=='quote-requests'}" [routerLink]="['/quote-requests/',idE]">
+                    Quote requests
+                  </li>
+                  <li [ngClass]="{selected: actualRoute=='booked-events'}" [routerLink]="['/booked-events/',idE]">
+                    Booked Events
+                  </li>
+                  <li [ngClass]="{selected: actualRoute=='review'}" [routerLink]="['/review/',idE]">
+                    Review
+                  </li>
+                  <li [ngClass]="{selected: actualRoute=='archived'}" [routerLink]="['/archived/',idE]">
+                    Archived
+                  </li>
+                </ul>
+              </div>
+              <div class="col-9">
+
+                <div *ngFor="let conversation of conversations" class="inbox-box" [routerLink]="['/event/',conversation.id]">
+                  <div class="row">
+                    <div class="col-2">
+                      <div class="inbox-box-avatar">
+                        <img src="{{conversation.BEuserB.avatar._url}}" height="98" width="98" />
+                        <!-- <img src="{{conversation.BEuserB.avatar}}" height="98" width="98" /> -->
+                      </div>
+                    </div>
+
+                    <div class="inbox-box-time col-3">
+                      <div class="inbox-box-center">
+                        <div class="inbox-box-title">{{conversation.BEuserB.name}}</div>
+                        <div class="inbox-box-desc">{{conversation.createdAt | timeAgo}}</div>
+                      </div>
+                    </div>
+                    <div class="inbox-box-event col-4">
+                      <div class="inbox-box-center">
+                        <div class="inbox-box-title">{{conversation.event.name}}</div>
+                        <div class="inbox-box-desc">{{conversation.event.place}}, {{conversation.event.date | date: 'dd MMMM yyyy'}} à {{conversation.event.date
+                          | date: 'HH'}}h </div>
+                      </div>
+                    </div>
+                    <div class="inbox-box-status col-2">
+                      <div class="inbox-box-center">
+                        <div class="inbox-box-status-title inbox-box-status-grey">{{conversation.status}}</div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+
+
+
+
+                <div *ngIf="idE" class="inbox-add-guest" [routerLink]="['/search/',idE]">
+                  <div class=" event-more ">
+                    <img src="assets/images/newEventButton@3x.png " height="26 ">
+                  </div>
+                  Ajouter un influenceur
+                </div>
+
+
+
+              </div>
+
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

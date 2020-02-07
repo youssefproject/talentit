@@ -1,0 +1,252 @@
+<div class="pcoded-wrapper">
+  <div class="pcoded-content">
+    <div class="pcoded-inner-content">
+      <!-- Main-body start -->
+      <div class="main-body">
+
+        <div class="preloader3 loader-block" [hidden]="!isLoading">
+          <div class="circ1 loader-danger"></div>
+          <div class="circ2 loader-danger"></div>
+          <div class="circ3 loader-danger"></div>
+          <div class="circ4 loader-danger"></div>
+        </div>
+
+
+        <div class="page-wrapper2" [hidden]="isLoading">
+
+          <h4>{{action_event}}</h4>
+          <ng2-toasty [position]="position"></ng2-toasty>
+          <div class="col-md-12 col-xl-12">
+            <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+              <div class="md-tabs">
+                <ngb-tabset [activeId]="activeIdString" #tabs="ngbTabset" (tabChange)="onTabChange($event)">
+                  <ngb-tab title="Event" id="event">
+                    <ng-template ngbTabContent>
+                      <div [@fadeInOutTranslate] class="m-t-15">
+
+
+                        <div class="row m-t-50">
+                          <div class="col-sm-9">
+
+                            <div class="form-group row">
+                              <label class="col-sm-2 col-form-label">Nom de l'évènement</label>
+                              <div class="col-sm-10">
+                                <input type="text" class="form-control" id="name" placeholder="Donner un nom" formControlName="name">
+                              </div>
+                            </div>
+                            <div class="form-group row">
+                              <label class="col-sm-2 col-form-label">Type</label>
+                              <div class="col-sm-10">
+                                <select name="select" class="form-control" formControlName="type">
+                                  <option value="no_type">Choississez un type</option>
+                                  <option value="disco">Discothèque</option>
+                                  <option value="cere">Cérémonie</option>
+                                  <option value="inau">Inauguration</option>
+                                  <option value="shoot">Mannequinat/Shooting</option>
+                                  <option value="clip">Clip Video</option>
+                                  <option value="show">ShowCase</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="form-group row">
+                              <label class="col-sm-2 col-form-label">Date</label>
+                              <div class="col-sm-3">
+                                <div class="input-group">
+                                  <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="modelPopup" ngbDatepicker #d="ngbDatepicker"
+                                    (click)="d.toggle()" formControlName="date">
+                                  <!--<div class="input-group-addon bg-default" (click)="d.toggle()" >
+                  <span class="icofont icofont-ui-calendar"></span>
+                </div>-->
+                                </div>
+                              </div>
+                              <div class="col-sm-2">
+                                <select name="select" class="form-control" formControlName="start">
+                                  <option value="opt1">01:00</option>
+                                  <option value="opt2">02:00</option>
+                                  <option value="opt3">03:00</option>
+                                  <option value="opt4">04:00</option>
+                                  <option value="opt5">05:00</option>
+                                  <option value="opt6">06:00</option>
+                                  <option value="opt7">07:00</option>
+                                  <option value="opt8">08:00</option>
+                                </select>
+                              </div>
+                              <div class="col-sm-2">
+                                <select name="select" class="form-control" formControlName="end">
+                                  <option value="opt1">12:00</option>
+                                  <option value="opt2">Type 2</option>
+                                  <option value="opt3">Type 3</option>
+                                  <option value="opt4">Type 4</option>
+                                  <option value="opt5">Type 5</option>
+                                  <option value="opt6">Type 6</option>
+                                  <option value="opt7">Type 7</option>
+                                  <option value="opt8">Type 8</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="form-group row">
+                              <label class="col-sm-2 col-form-label">Lieu</label>
+                              <div class="col-sm-10">
+                                <input type="text" class="form-control" id="email" placeholder="Dans quelle ville aura lieu votre show ?" formControlName="place">
+                              </div>
+                            </div>
+                            <div class="row">
+                              <label class="col-sm-2 col-form-label">Description</label>
+                              <div class="col-sm-10">
+                                <textarea rows="5" class="form-control-textarea" placeholder="Décrivez votre évènement" formControlName="desc"></textarea>
+                              </div>
+                            </div>
+
+
+                          </div>
+                          <div class="col-sm-3">
+                            <div class="messages text-danger2" *ngIf="myForm.controls.name.errors?.required">Le nom de l'évènement ne peut pas être vide</div>
+                            <div class="messages text-danger2" *ngIf="myForm.controls.date.errors?.required">La date est requise</div>
+                            <!--<div class="messages text-danger2 error" *ngIf="myForm.controls.password.errors?.required">Password can't be blank</div>
+        <div class="messages text-danger2" *ngIf="myForm.controls.rpassword.errors?.required">Repeat password can't be blank</div>
+        <div class="messages text-danger2" *ngIf="myForm.controls.rpassword.errors?.equalTo">The passwords does not match</div>
+        <div class="messages text-danger2" *ngIf="myForm.controls.email.errors?.required">Email can't be blank</div>
+        <div class="messages text-danger2" *ngIf="myForm.controls.gender.errors?.required">Gender can't be blank</div>
+        -->
+
+
+                          </div>
+
+
+
+                        </div>
+
+
+                      </div>
+                    </ng-template>
+                  </ngb-tab>
+                  <ngb-tab title="Guest" id="guest">
+                    <ng-template ngbTabContent>
+                      <div [@fadeInOutTranslate] class="m-t-15">
+                        <div class="loader-block" [hidden]="isLoadingGuest">
+                          <svg id="loader2" viewBox="0 0 100 100">
+                            <circle id="circle-loader2" cx="50" cy="50" r="45"></circle>
+                          </svg>
+                        </div>
+
+                        <!--<div class="list-guest" *ngFor="let theGuest of guest">
+<img class="d-flex align-self-center img-radius" src="{{ theGuest.guest.avatar._url }}" alt="Generic placeholder image">
+<div class="media-body">
+  <p class="notification-msg"><span class="usernam-notif">{{theGuest.guest.name}}</span> </p>
+</div>
+
+                            </div>-->
+                        <div class="table-responsive">
+                          <table class="table table-hover table-guest">
+                            <tbody>
+                              <tr *ngFor="let theGuest of guest">
+                                <td>
+                                  <a href="javascript:">
+                                    <img class="img-radius img-70" src="{{ theGuest.guest.avatar._url }}" alt="chat-user">
+                                    <!-- <img class="img-radius img-70" src="{{ theGuest.guest.avatar }}" alt="chat-user"> -->
+                                  </a>
+                                </td>
+                                <td>
+                                  <h6>{{theGuest.guest.name}}</h6>
+                                  <p class="text-muted">{{theGuest.guest.title}}</p>
+                                </td>
+                                <td class="p-t-40">
+                                  <span *ngIf="theGuest.type==0" class="label label-primary" (click)="modalMessage.show();guestSelected=theGuest">Invitation non envoyée</span>
+                                  <span *ngIf="theGuest.type==1" class="label label-default">Invitation envoyée</span>
+                                </td>
+                                <td class="p-t-40" (click)="removeThisGuest(theGuest)">
+                                  <div class="remove-guest"></div>
+
+
+
+
+
+
+                                </td>
+                              </tr>
+
+                            </tbody>
+                          </table>
+                        </div>
+
+
+
+                        <p class="m-5 btn-add" (click)="addGuest()">Ajouter un influenceur</p>
+
+
+                      </div>
+
+                      <app-modal-basic #modalMessage>
+                        <div class="app-modal-header">
+                          <h4 class="modal-title">INVITATION</h4>
+                          <button type="button" class="close basic-close" (click)="modalMessage.hide()">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="app-modal-body" *ngIf="guestSelected!=undefined">
+                          <p>Voulez-vous envoyer l'invitation à {{ guestSelected.guest.name }}?</p>
+                        </div>
+                        <div class="app-modal-footer">
+                          <button type="button" class="btn btn-default waves-effect" (click)="modalMessage.hide()">Annuler</button>
+                          <button type="button" class="btn btn-primary waves-effect waves-light" (click)="modalMessage.hide();sendInvitation(guestSelected)">Envoyer l'invitation</button>
+                        </div>
+                      </app-modal-basic>
+
+
+                    </ng-template>
+                  </ngb-tab>
+                  <ngb-tab title="Paiement" id="payment">
+                    <ng-template ngbTabContent>
+                      <div [@fadeInOutTranslate] class="m-t-15">
+                        <p class="m-5">Pas de paiement disponible</p>
+                      </div>
+                    </ng-template>
+                  </ngb-tab>
+                  <ngb-tab title="Historique" id="activity">
+                    <ng-template ngbTabContent>
+                      <div [@fadeInOutTranslate] class="m-t-15">
+                        <p class="m-5">Aucun historique</p>
+                      </div>
+                    </ng-template>
+                  </ngb-tab>
+                  <ngb-tab title="Réglages" id="settings">
+                    <ng-template ngbTabContent>
+                      <div [@fadeInOutTranslate] class="m-t-15">
+                        <br>
+
+                        <div class="parent-center">
+                          <div class="center-vertically">
+                            <div class="title_setting">
+                              <span>Ne pas être notifié sur cet évènement</span>
+                            </div>
+                            <div class="swift_setting">
+                              <ui-switch class="js-info m-l-30" color="#fd2d76" switchColor="#fff" size="small"></ui-switch>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="m-t-20">
+                          <span class="label label-danger" style="background:#ff4047">Supprimer cet évènement</span>
+                        </div>
+                      </div>
+                    </ng-template>
+                  </ngb-tab>
+                </ngb-tabset>
+              </div>
+              <div class="row">
+                <div class="col-sm-10">
+                  <div class="pull-right">
+                    <button type="button" class="btn btn_cancel" (click)="cancel()">ANNULER</button>
+                    <button type="submit" class="btn btn-grad m-l-10" [disabled]="!myForm.valid">SAVE</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

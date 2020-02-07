@@ -1,0 +1,118 @@
+<li class="">
+    <a href="javascript:" (click)="toggleChat()">
+      <i class="ti-chat">
+        <img src="assets/icon/chat-icon@3x.png" height="25" />
+      </i>
+      <!--<span class="badge bg-c-green"></span>-->
+    </a>
+  </li>
+
+
+   <!-- Sidebar chat start -->
+   <div [@slideInOut]="chatSlideInOut" id="sidebar" class="users p-chat-user showChat" [ngClass]="chatSlideInOut">
+      <div class="had-container">
+        <div class="card card_main p-fixed users-main">
+          <div class="user-box">
+            <div class="chat-search-box">
+              <a class="back_friendlist" (click)="toggleChat()">
+                <i class="fa fa-chevron-left"></i>
+              </a>
+              <div class="right-ti-control">
+                <input class="form-control  search-text" placeholder="Search Friend" id="search-friends">
+                <div class="form-icon">
+                  <i class="fa fa-search"></i>
+                </div>
+              </div>
+            </div>
+            <div class="main-friend-list">
+              <div class="media userlist-box" data-username="Josephin Doe" placement="left" ngbTooltip="Josephin Doe" (click)="toggleInnerChat()">
+                <a class="media-left" href="javascript:">
+                  <img class="media-object img-radius img-radius" src="assets/images/avatar-3.jpg" alt="Josephin Doe">
+                  <div class="live-status bg-success"></div>
+                </a>
+                <div class="media-body">
+                  <div class="f-13 chat-header">Josephin Doe</div>
+                </div>
+              </div>
+              <div class="media userlist-box" data-username="Lary Doe" placement="left" ngbTooltip="Lary Doe" (click)="toggleInnerChat()">
+                <a class="media-left" href="javascript:">
+                  <img class="media-object img-radius" src="assets/images/avatar-2.jpg" alt="Lary Doe">
+                  <div class="live-status bg-danger"></div>
+                </a>
+                <div class="media-body">
+                  <div class="f-13 chat-header">Lary Doe</div>
+                </div>
+              </div>
+              <div class="media userlist-box" data-username="Alice" placement="left" ngbTooltip="Alice" (click)="toggleInnerChat()">
+                <a class="media-left" href="javascript:">
+                  <img class="media-object img-radius" src="assets/images/avatar-4.jpg" alt="Alice">
+                  <div class="live-status bg-success"></div>
+                </a>
+                <div class="media-body">
+                  <div class="f-13 chat-header">Alice</div>
+                </div>
+              </div>
+              <div class="media userlist-box" data-username="Alia" placement="left" ngbTooltip="Alia" (click)="toggleInnerChat()">
+                <a class="media-left" href="javascript:">
+                  <img class="media-object img-radius" src="assets/images/avatar-3.jpg" alt="Alia">
+                  <div class="live-status bg-success"></div>
+                </a>
+                <div class="media-body">
+                  <div class="f-13 chat-header">Alia</div>
+                </div>
+              </div>
+              <div class="media userlist-box" data-username="Suzen" placement="left" ngbTooltip="Suzen" (click)="toggleInnerChat()">
+                <a class="media-left" href="javascript:">
+                  <img class="media-object img-radius" src="assets/images/avatar-2.jpg" alt="Suzen">
+                  <div class="live-status bg-danger"></div>
+                </a>
+                <div class="media-body">
+                  <div class="f-13 chat-header">Suzen</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Sidebar inner chat start-->
+    <div [@slideInOut]="innerChatSlideInOut" class="showChat_inner">
+      <div class="media chat-inner-header">
+        <a class="back_chatBox">
+          <i class="fa fa-chevron-left" (click)="toggleInnerChat()"></i> Josephin Doe
+        </a>
+      </div>
+      <div class="media chat-messages">
+        <a class="media-left photo-table" href="javascript:">
+          <img class="media-object img-radius img-radius m-t-5" src="assets/images/avatar-3.jpg" alt="Generic placeholder image">
+        </a>
+        <div class="media-body chat-menu-content">
+          <div class="">
+            <p class="chat-cont">I'm just looking around. Will you tell me something about yourself?</p>
+            <p class="chat-time">8:20 a.m.</p>
+          </div>
+        </div>
+      </div>
+      <div class="media chat-messages">
+        <div class="media-body chat-menu-reply">
+          <div class="">
+            <p class="chat-cont">I'm just looking around. Will you tell me something about yourself?</p>
+            <p class="chat-time">8:20 a.m.</p>
+          </div>
+        </div>
+        <div class="media-right photo-table">
+          <a href="javascript:">
+            <img class="media-object img-radius img-radius m-t-5" src="assets/images/avatar-4.jpg" alt="Generic placeholder image">
+          </a>
+        </div>
+      </div>
+      <div class="chat-reply-box p-b-20">
+        <div class="right-ti-control">
+          <input type="text" class="form-control search-text" placeholder="Share Your Thoughts">
+          <div class="form-icon">
+            <i class="fa fa-paper-plane"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Sidebar inner chat end-->

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1024 67" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none">
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Happy-line" fill="#FFFFFF">
+            <path d="M0,0 C0,0 256,67 512,67 C768,67 1024,0 1024,0 L1024,67 L0,67 L0,0 Z" id="Happy-Line"></path>
+        </g>
+    </g>
+</svg>

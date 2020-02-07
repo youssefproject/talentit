@@ -1,0 +1,95 @@
+<div class="container-fluid mycontainer">
+<div class="row">
+<div class="col-lg-6 d-none d-lg-block">
+
+  <img class="card-img-top" src="../../../../assets/images/fusee.png" >
+
+
+</div>
+<div class=" col-md-6 col-lg-6  justify-content-center">
+  
+    <h2 class="text-center myh2">Get Started with a free account</h2>
+
+    <div>
+    <span>
+  <span>Create a boostevent account to create beautiful events and invite celebrities.Already have a boostevent account?</span>
+<a [routerLink]="['/auth/login/simple']" ><u class="myalign" >Log in here</u> </a>
+</span>
+
+</div>
+<div class="form-Inscription">
+<form #regbrandForm="ngForm" (ngSubmit)="onSubmit(regbrandForm)" class="myForm" >
+
+    <div class="form-group" >
+          
+        
+  <label> Nom</label>
+  <input class="form-control meslabels" [(ngModel)]="lastname" placeholder="Entrez votre nom">
+        
+      </div>
+
+      <div class="form-group" >
+          
+        
+          <label> Prenom</label>
+          <input class="form-control meslabels" [(ngModel)]="name" placeholder="Entrez votre prenom">
+          <!--input class="form-control" name="name" #name="ngModel" [(ngModel)]="this.name" placeholder="Entrez votre nom"-->
+        
+              </div>
+              <div class="form-group" >
+          
+        
+                  <label> email</label>
+                  <input class="form-control meslabels" [(ngModel)]="email" placeholder="Entrez votre email">
+                  
+                
+             </div>
+            <div class="form-group" >
+          
+        
+                <label> password</label>
+                <input class="form-control meslabels" [(ngModel)]="email" placeholder="Entrez votre email">
+                         
+                        
+          </div>
+          <div class="form-group" >
+          
+        
+                        <label> Confirm your password</label>
+                         <input class="form-control meslabels" [(ngModel)]="email" placeholder="Entrez votre email">
+                                 
+                                
+            </div>
+
+
+           
+                   
+              
+                  <button class="btn btn-primary mybutton" type="submit">
+                  
+                    Get Started!
+                 </button> 
+             
+                 <span>
+                 <p>By clicking this button, you agree to boostevent's 
+                     <span>
+                        <a [routerLink]="['/auth/login/simple']">
+                            <u class="myalign">terms of use</u>
+                        </a>
+                    </span>
+                </p>
+            </span>
+            
+        
+
+</form>
+</div>
+
+
+</div>
+
+
+
+
+</div>
+</div>

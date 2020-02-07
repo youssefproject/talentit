@@ -1,0 +1,530 @@
+<div class="line-fullscreen brandreg-page">
+
+  <div class="pcoded-wrapper">
+    <div class="pcoded-content">
+      <div class="pcoded-inner-content">
+
+        <div class="brandreg-nav padding">
+
+
+          <img class=" brandreg-logo-fluid" src="assets/images/logo@2x.png" alt="Theme-Logo" width="235" />
+
+
+        </div>
+
+
+        <!-- Main-body start -->
+        <div class="main-body">
+
+          <div class="page-wrapper">
+
+            <div *ngIf="i<6" class="row brandreg-numerotation   d-flex justify-content-center">
+
+              <div class=" p-t-50 text-center d-flex col-8">
+
+                <div class="col-1 text-center"></div>
+
+                <div class="col-2">
+                  <a (click)="un()">
+                    <div class="brandreg-rounded-ti  text-center">1</div>
+                  </a>
+
+                </div>
+
+                <div class="col-2">
+                  <div *ngIf="i<2" class="brandreg-rounded text-center">2</div>
+                  <a (click)="deux()">
+                    <div *ngIf="i>1" class="brandreg-rounded-ti  text-center">2</div>
+                  </a>
+                </div>
+                <div class="col-2">
+                  <div *ngIf="i<3" class="brandreg-rounded text-center">3</div>
+                  <a (click)="trois()">
+                    <div *ngIf="i>2" class="brandreg-rounded-ti text-center">3</div>
+                  </a>
+                </div>
+                <div class="col-2">
+                  <div *ngIf="i<4" class="brandreg-rounded text-center">4</div>
+                  <a (click)="quatre()">
+                    <div *ngIf="i>3" class="brandreg-rounded-ti text-center">4</div>
+                  </a>
+                </div>
+                <div class="col-2">
+                  <div *ngIf="i<5" class="brandreg-rounded text-center">5</div>
+                  <div *ngIf="i>4" class="brandreg-rounded-ti text-center">5</div>
+                </div>
+                <div class="col-1 text-center"></div>
+
+              </div>
+            </div>
+
+            <div class=" m-t-30 "></div>
+            <div *ngIf="i==1 || i==2 ">
+              <div class="row d-flex justify-content-center">
+
+                <div class=" p-t-30 text-center">
+                  <div class="brandreg-title  text-center d-flex justify-content-center">
+                    <h2>Apprenons à nous connaitre </h2>
+                  </div>
+
+                </div>
+              </div>
+              <div class="row d-flex justify-content-center">
+
+                <div class=" p-t-30 text-center">
+                  <div class="brandreg-subtitle  text-center d-flex justify-content-center">
+                    <p class="brandreg-p"> Vous êtes </p>
+                  </div>
+
+                </div>
+              </div>
+
+              <div *ngIf="i==1">
+                <div class="row text-center padding d-flex justify-content-center">
+                  <div class=" justify-content-center col-xl-8">
+                    <div class="row justify-content-center d-flex">
+
+
+                      <div class="col-sm-5 col-md-5 col-lg-3 col-xl-5 d-flex justify-content-center">
+                        <a (click)="gender1()">
+                          <div class="brandreg-entrepr brandreg-bo">
+                            <img class="img img-responsive img-fluid" src="assets/images/isMan@2x.png" width="110" alt="">
+
+
+                          </div>
+                        </a>
+                      </div>
+                      <div class="col-sm-5 col-md-5 col-lg-5 col-xl-5 d-flex justify-content-center">
+                        <a (click)="gender2()">
+                          <div class="brandreg-book brandreg-bo">
+                            <img class="img img-responsive img-fluid brandreg-img" src="assets/images/isWoman@2x.png" width="80" alt="">
+
+
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <div *ngIf="i==2">
+                <div *ngIf="actualRoute==='brand'">
+                  <div class="row text-center padding d-flex justify-content-center">
+                    <div class=" justify-content-center col-xl-8">
+                      <div class="row justify-content-center d-flex">
+
+                        <div class="col-sm-8 col-md-8 col-lg-3 col-xl-4 d-flex justify-content-center ">
+                          <div (click)="type1()" class="brandreg-particulier brandreg-box">
+                            <img src="assets/images/alone@2x.png" width="50" alt="">
+
+                            <div class="brandreg-desc-particulier padding">Un particulier</div>
+                          </div>
+                        </div>
+                        <div class="col-sm-8 col-md-8 col-lg-3 col-xl-4 d-flex justify-content-center">
+                          <div (click)="type2()" class="brandreg-entreprise brandreg-box">
+                            <img src="assets/images/enterprise@2x.png" width="50" alt="">
+
+                            <div class="brandreg-desc-enterprise padding">Une entreprise</div>
+                          </div>
+                        </div>
+                        <div class="col-sm-8 col-md-8 col-lg-3 col-xl-4 d-flex justify-content-center">
+                          <div (click)="type3()" class="brandreg-booker brandreg-box">
+                            <img src="assets/images/booker@2x.png" width="50" alt="">
+
+                            <div class="brandreg-desc-booker padding">Un booker</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div *ngIf="actualRoute==='influenceur'">
+                  <div class="row text-center padding d-flex justify-content-center">
+                    <div class=" justify-content-center col-xl-8">
+                      <div class="row justify-content-center d-flex">
+
+                        <div class="col-sm-8 col-md-8 col-lg-3 col-xl-4 d-flex justify-content-center ">
+                          <div (click)="celebrite()" class="influencer-celebrite brandreg-box">
+                            <img src="assets/images/celebrity@2x.png" width="90" alt="">
+
+                            <div class="influencerreg-desc-particulier padding">Une célébrité</div>
+                          </div>
+                        </div>
+                        <div class="col-sm-8 col-md-8 col-lg-3 col-xl-4 d-flex justify-content-center">
+                          <div (click)="manager()" class="influencer-manager brandreg-box">
+                            <img src="assets/images/world@2x.png" width="80" alt="">
+
+                            <div class="brandreg-desc-enterprise padding">Son manager</div>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <form #brandregForm="ngForm" (ngSubmit)="terminer(brandregForm)">
+              <div *ngIf="i==3">
+
+                <div class="row d-flex justify-content-center">
+
+                  <div class=" p-t-30 text-center">
+                    <div class="brandreg-title  text-center d-flex justify-content-center">
+                      <h2>Apprenons à nous connaitre </h2>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="row d-flex justify-content-center">
+
+                  <div class=" p-t-30 text-center">
+                    <div class="brandreg-subtitle  text-center d-flex justify-content-center">
+                      <p class="brandreg-p"> Quelques détails sur vous </p>
+                    </div>
+
+                  </div>
+                </div>
+
+                <div *ngIf="actualRoute==='brand'">
+                  <div class="row d-flex justify-content-center brandreg-row-padding padding">
+
+                    <div class="col-sm-8 col-md-8 col-lg-4 col-xl-4 justify-content-center ">
+                      <div class="form-group">
+                        <input class="form-control brandreg-input" placeholder="Prénom" name="name" [(ngModel)]="this.name" required>
+
+
+
+
+                      </div>
+
+
+                    </div>
+
+                    <div class="col-sm-8 col-md-8 col-lg-4 col-xl-4 justify-content-center ">
+                      <div class="form-group">
+                        <input class="form-control brandreg-input" placeholder="Nom" name="Nom" [(ngModel)]="this.lastname" required>
+
+
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row d-flex justify-content-center brandreg-row-paddig">
+
+
+
+                    <div class="col-sm-8 col-md-8 col-lg-4 col-xl-4 justify-content-center ">
+                      <div class="form-group">
+                        <input class="form-control brandreg-input" placeholder="Adresse" name="Adresse" [(ngModel)]="this.adresse">
+
+
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div *ngIf="actualRoute==='influenceur'">
+                  <div class="row d-flex justify-content-center brandreg-row-padding padding">
+
+                    <div class="col-sm-8 col-md-8 col-lg-4 col-xl-4 justify-content-center ">
+                      <div class="form-group">
+                        <input class="form-control brandreg-input" placeholder="Prénom" name="name" [(ngModel)]="this.name" required>
+
+
+
+
+                      </div>
+
+
+                    </div>
+
+                    <div class="col-sm-8 col-md-8 col-lg-4 col-xl-4 justify-content-center ">
+                      <div class="form-group">
+                        <input class="form-control brandreg-input" placeholder="Nom" name="Nom" [(ngModel)]="this.lastname" required>
+
+
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row d-flex justify-content-center brandreg-row-paddig">
+
+                    <div class="col-sm-8 col-md-8 col-lg-4 col-xl-4 justify-content-center ">
+                      <div class="form-group">
+                        <input class="form-control brandreg-input" placeholder="Nom public   ( si différent du Nom Prénom ) " name="celebrityname"
+                          [(ngModel)]="this.celebrityname">
+
+
+
+                      </div>
+                    </div>
+
+                    <div class="col-sm-8 col-md-8 col-lg-4 col-xl-4 justify-content-center ">
+                      <div class="form-group">
+                        <input class="form-control brandreg-input" placeholder="Ville" name="Adresse" [(ngModel)]="this.city">
+
+
+
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+
+
+                <div class="row d-flex justify-content-center brandreg-warning-red">{{messageError}}</div>
+
+                <div class="row d-flex justify-content-center brandreg-click-paddig padding">
+
+                  <button type="button" class="btn btn-secondary brandreg-button" (click)="info(brandregForm) ">
+
+                    Suivant
+
+                  </button>
+                </div>
+
+
+
+
+
+
+
+
+
+              </div>
+              <div *ngIf="i==4">
+
+                <div class="row d-flex justify-content-center">
+
+                  <div class=" p-t-30 text-center">
+                    <div class="brandreg-title  text-center d-flex justify-content-center">
+                      <h2>Apprenons à nous connaitre </h2>
+                    </div>
+
+                  </div>
+                </div>
+                <div *ngIf="actualRoute==='brand'">
+                  <div class="row d-flex justify-content-center">
+
+                    <div class=" p-t-30 text-center">
+                      <div class="brandreg-subtitle  text-center d-flex justify-content-center">
+                        <p class="brandreg-p"> Quelques renseigements sur l'entreprise</p>
+                      </div>
+
+                    </div>
+                  </div>
+
+
+                  <div class="row d-flex justify-content-center brandreg-row-padding padding">
+
+                    <div class="col-sm-8 col-md-8 col-lg-4 col-xl-4 justify-content-center ">
+                      <div class="form-group">
+                        <input class="form-control brandreg-input" placeholder="Nom Société" name="name" [(ngModel)]="this.brandname" required>
+
+
+
+
+                      </div>
+
+
+                    </div>
+
+                    <div class="col-sm-8 col-md-8 col-lg-4 col-xl-4 justify-content-center ">
+                      <div class="form-group">
+                        <input class="form-control brandreg-input" placeholder="Adresse Société" name="Nom" [(ngModel)]="this.brandadresse" required>
+
+
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row d-flex justify-content-center brandreg-row-paddig">
+
+                    <div class="col-sm-8 col-md-8 col-lg-4 col-xl-4 justify-content-center ">
+                      <div class="form-group">
+                        <input class="form-control brandreg-input" placeholder="Numéro SIREN" name="name" [(ngModel)]="this.numsiren">
+
+
+
+
+                      </div>
+
+
+                    </div>
+
+                    <div class="col-sm-8 col-md-8 col-lg-4 col-xl-4 justify-content-center ">
+                      <div class="form-group">
+                        <input class="form-control brandreg-input" placeholder="Nom Gérant" name="Nom" [(ngModel)]="this.nomgerant">
+
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div *ngIf="actualRoute==='influenceur'">
+                  <div class="row d-flex justify-content-center">
+
+                    <div class=" p-t-30 text-center">
+                      <div class="brandreg-subtitle  text-center d-flex justify-content-center">
+                        <p class="brandreg-p"> Via quel réseau voulez-vous valider votre inscription sur Boostevent ?
+                        </p>
+                      </div>
+
+                    </div>
+                  </div>
+                  <div class="row  justify-content-center">
+                    <div class="col-9  justify-content-center influenceur-social-padding padding">
+                      <div class="row  ">
+
+
+                        <div class="col-3 d-flex justify-content-center">
+                          <a (click)="snapchat()">
+                            <div class="brandreg-entrepr brandreg-bo">
+                              <img class="img img-responsive img-fluid brandreg-image" src="assets/images/snapchat@2x.png" alt="">
+
+
+                            </div>
+                          </a>
+                        </div>
+                        <div class="col-3 d-flex justify-content-center text-center align-content">
+                          <a (click)="facebook()">
+                            <div class="brandreg-book brandreg-bo">
+                              <img class="img img-responsive img-fluid brandreg-image" src="assets/images/facebook@2x.png" alt="">
+
+
+                            </div>
+                          </a>
+                        </div>
+                        <div class="col-3 d-flex justify-content-center">
+                          <a (click)="twitter()">
+                            <div class="brandreg-book brandreg-bo">
+                              <img class="img img-responsive img-fluid brandreg-image" src="assets/images/twitter@2x.png" alt="">
+
+
+                            </div>
+                          </a>
+                        </div>
+                        <div class="col-3 d-flex justify-content-center">
+                          <a (click)="youtube()">
+                            <div class="brandreg-entrepr brandreg-bo">
+                              <img class="img img-responsive img-fluid brandreg-image" src="assets/images/youtube@2x.png" alt="">
+
+
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="row d-flex justify-content-center brandreg-warning-red">{{messageError}}</div>
+                <div class="row d-flex justify-content-center brandreg-click-paddig padding">
+
+                  <button type="button" class="btn btn-secondary brandreg-button" (click)="infobrand(brandregForm) ">
+
+                    Suivant
+
+                  </button>
+
+
+                </div>
+              </div>
+              <div *ngIf="i==5">
+                <div class="row d-flex justify-content-center">
+
+                  <div class=" p-t-30 text-center">
+                    <div class="brandreg-title  text-center d-flex justify-content-center">
+                      <h2>C'est presque fini! </h2>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="row d-flex justify-content-center">
+
+                  <div class=" p-t-30 text-center">
+                    <div class="brandreg-subtitle  text-center d-flex justify-content-center">
+                      <p class="brandreg-p"> Pour valider votre profil, une personne de notre équipe vous appelera dans
+                        <br/> les 48h, à quel numéro etes vous joignable ?</p>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="row d-flex justify-content-center brandreg-row-paddig">
+
+                  <div class="col-sm-8 col-md-8 col-lg-4 col-xl-5 justify-content-center ">
+                    <div class="form-group">
+                      <input class="form-control brandreg-input" placeholder="Numéro de téléphone" name="name" [(ngModel)]="this.tel" required>
+
+
+
+
+                    </div>
+
+
+                  </div>
+
+
+
+
+                </div>
+                <div class="row d-flex justify-content-center brandreg-warning-red">{{messageError}}</div>
+                <div class="row d-flex justify-content-center brandreg-click-paddig padding">
+
+                  <button type="button" class="btn btn-secondary brandreg-button" (click)="terminer(brandregForm) ">
+
+                    Terminer
+
+                  </button>
+                </div>
+              </div>
+              <div *ngIf="i==6">
+                <div class="row d-flex justify-content-center">
+
+                  <div class=" p-t-30 text-center">
+                    <div class="  text-center d-flex justify-content-center">
+                      <h2>Inscription réussite! </h2>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="row d-flex justify-content-center">
+
+                  <div class=" p-t-30 text-center">
+                    <div class=" brandreg-subtitle text-center d-flex justify-content-center">
+                      <p class="brandreg-p"> Merci de vous etre inscrit sur Boostevent,
+                        <br/> Un membre de l'équipe vous contactera dans les 48H</p>
+                    </div>
+
+                  </div>
+                </div>
+
+
+
+              </div>
+
+
+
+            </form>
+
+
+
+
+
+
+
+
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+<section class="login p-fixed d-flex text-center ">
+  <!-- Container-fluid starts -->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12">
+        <!-- Authentication card start -->
+        <div class="login-card card-block auth-body mr-auto ml-auto">
+          <form class="md-float-material">
+          
+            <div class="auth-box">
+              <div class="row m-b-20">
+                <div class="col-md-12">
+                  <h3 class="text-left">Retrouvez votre mot de passe</h3>
+                </div>
+              </div>
+              
+              <div >
+                <input class="form-control" placeholder="Your Email Address">
+                <span class="md-line"></span>
+                <p class="text-inverse text-right">Aller à <a [routerLink]="['/auth/login/simple']">Se connecter.</a></p>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <button type="button" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">Réinitialiser</button>
+                </div>
+              </div>
+              
+            </div>
+          </form>
+          <!-- end of form -->
+        </div>
+        <!-- Authentication card end -->
+      </div>
+      <!-- end of col-sm-12 -->
+    </div>
+    <!-- end of row -->
+  </div>
+  <!-- end of container-fluid -->
+</section>

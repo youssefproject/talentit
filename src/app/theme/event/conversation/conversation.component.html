@@ -1,0 +1,184 @@
+<div class="line-fullscreen">
+  <div *ngIf="!isGuest" class="conversation-full">
+    <img src="assets/images/paga-dans-pres.jpg" alt="">
+    <div class="conversation-full-overlay">
+
+    </div>
+    <div class="conversation-full-content">Paga DJ, Télé-réalité</div>
+
+    <div class="conversation-see-profile">
+      <div class="conversation-see-profile-button">Voir profil</div>
+    </div>
+  </div>
+
+  <div *ngIf="isGuest" class="conversation-full-g">
+    <div class="conversation-full-guest">
+
+    </div>
+    <div class="conversation-full-content">Soirée Rooftop</div>
+
+
+  </div>
+
+
+  <div class="pcoded-wrapper">
+    <div class="pcoded-content">
+      <div class="pcoded-inner-content">
+        <!-- Main-body start -->
+        <div class="main-body">
+          <div class="page-wrapper">
+
+
+
+
+
+            <div class="row">
+
+              <div class="col-8">
+
+                <div class="conversation-warning">Paga est encore disponible pour cette date.
+                  <span class="heavy">Réservez le dès maintenant!</span>
+                </div>
+
+                <div *ngFor="let message of messages">
+
+
+                  <div *ngIf="message.me == 1 && message.type == 0 ">
+                    <div class="row m-t-30">
+                      <div class="conversation-message-avatar col-2">
+                        <div class="conversation-box-avatar avatar-grey">
+                          <img src="{{message.userA.avatar._url}}" height="98" width="98" />
+                        </div>
+                      </div>
+                      <div class="col-8">
+                        <div class="conversation-box-message">
+                          {{message.message}}
+                        </div>
+                        <div class="conversation-date">il y a 1 heure</div>
+                      </div>
+
+
+                      <div class="conversation-message-avatar col-2">
+
+                      </div>
+
+                    </div>
+                  </div>
+                  <div *ngIf="message.me == 0 && message.type == 0">
+                    <div class="row m-t-30">
+                      <div class="conversation-message-avatar col-2"></div>
+                      <div class="col-8">
+                        <div class="conversation-box-message conversation-pink">
+                          {{message.message}}
+
+                        </div>
+                        <div class="conversation-date right">
+                          <img src="assets/images/flag@3x.png" width="10" /> il y a 30 secondes</div>
+                      </div>
+
+                      <div class="conversation-message-avatar col-2">
+                        <div class="conversation-box-avatar">
+                          <img src="{{theUser.get('avatar')._url}}" height="98" width="98" />
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+
+                  <div>
+                    <div class="row m-t-30" *ngIf="message.me == 1 && message.type == 1">
+                      <div class="conversation-message-avatar col-2">
+
+                      </div>
+                      <div class="col-8">
+                        <div class="conversation-box-message conversation-devis">
+                          <div>
+                            Vous avez reçu un devis!</div>
+                          <div class="conversation-text-devis">
+                            Devis (voir/imprimer)</div>
+
+                          <div class="m-t-45">Il vous reste 6 jours, 22 heures et 36 minutes pour réserver Paga</div>
+                          <div>à partir de {{ message.price}} €</div>
+                        </div>
+                        <div class="conversation-info m-t-50">
+                          <span class="conversation-note"> Notez bien!</span>
+                          <br/> Réserver sur boostevent permet des services géniaux, paiement sécurisé et une assurance annulation.
+                          En savoir plus
+                        </div>
+                      </div>
+
+                      <div class="conversation-message-avatar col-2">
+
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="row m-t-30">
+                    <div class="conversation-message-avatar col-2">
+
+                    </div>
+                    <div class="col-8">
+                      <form #createeventForm="ngForm" (ngSubmit)="alert('jjj')">
+                        <div class="conversation-box-message conversation-box-new-message">
+
+
+                          <textarea class="conversation-form-control" rows="3" cols="50" name="name" #name="ngModel" [(ngModel)]="newMessage" placeholder="Ecrire un message"
+                            required>
+                          </textarea>
+
+
+
+                        </div>
+                        <div class="row">
+                          <div class="col-lg-12 p-t-20">
+                            <div class="pull-right conversation-btn-send" (click)="test()">Envoyer</div>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+
+                    <div class="conversation-message-avatar col-2">
+                      <div class="conversation-box-avatar">
+                        <img src="{{theUser.get('avatar')._url}}" height="98" width="98" />
+                      </div>
+                    </div>
+
+
+                  </div>
+                </div>
+
+
+              </div>
+
+              <div class="col-4 conversation-box-booking">
+
+                <div *ngIf="!isGuest" class="conversation-box-book">
+                  <div class="conversation-box-book-header">
+                    <div class="conversation-box-book-header-from">
+                      à partir de
+                    </div>
+                    <div class="conversation-box-book-header-price">
+                      3 000€
+                    </div>
+                  </div>
+                  <div class="conversation-box-book-body">
+                    <div class="conversation-box-book-button-ok">Réserver</div>
+                    <div class="conversation-box-book-button-cancel">Décliner</div>
+                  </div>
+                </div>
+                <ul>
+                  <app-event-box eventName="Soirée Rooftop" eventPlace="Paris"></app-event-box>
+                </ul>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

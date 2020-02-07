@@ -1,0 +1,130 @@
+<div class="line-fullscreen">
+
+
+  <div class="pcoded-wrapper">
+    <div class="pcoded-content">
+      <div class="pcoded-inner-content">
+        <!-- Main-body start -->
+        <div class="main-body">
+          <div class="page-wrapper">
+
+
+
+            <div class="line_warning">
+              <div class="small-close">
+                <img src="assets/images/small-close@2x.png" height="22" />
+              </div>
+              <div class="row">
+                <div class=" warning-icon">
+                  <img src="assets/images/stock-vector-vector-illustration-light-bulb-with-rays-shine-energy-and-idea-symbol-decoration-for-greeting@2x.png"
+                    height="64" />
+                </div>
+                <div class="col-6 warning-text m-t-20">
+                  <div class="warning-title">Félicitation…!</div>
+                  <div class="warning-desc p-t-5">Votre compte est bien activé. Créez un évènement et invitez des influenceurs!</div>
+                </div>
+                <div class="col-4">
+                  <div class="warning-button">Commencer</div>
+                </div>
+              </div>
+
+            </div>
+            <div class="m-t-0"></div>
+            <div class="row">
+              <div class="col-xl-3 ">
+                <div class="col-xl-12 col-box-boost ">
+                  <div class="profile-box-img">
+                    <img src="{{theUser.get('avatar')._url}}" />
+                    <!-- <img src="{{theUser.get('avatar')}}" /> -->
+                  </div>
+                  <div class="profile-box-title">{{theUser.get('firstName')}} {{theUser.get('lastName')}} </div>
+                  <div class="profile-box-button">Edit profile</div>
+                </div>
+              </div>
+              <div class="col-xl-9 ">
+                <div class="col-xl-12 col-box-boost ">
+                  <div class="dashboard-events">
+                    <div class="dashboard-title-event">Recent Events</div>
+
+                    <div data-guys-beacon="section=artistfollow" id="/home/artistfollow" data-guys-frame="/home/artistfollow" class="guys-frame-home-artistfollow guys-frame">
+
+                      <div class="carousel">
+
+                        <ul>
+
+
+
+
+
+                          <app-event-box *ngFor="let event of events" eventName={{event.name}} eventPlace={{event.place}}></app-event-box>
+
+                          <li class="event-box-more artist-pane" [routerLink]="['/dashboard/event/quick-start/']">
+                            <div class="event-box-outer">
+                              <div class="event-more">
+                                <img src="assets/images/newEventButton@3x.png" height="26">
+                              </div>
+                              Créer un évènement
+                            </div>
+
+                          </li>
+
+
+
+
+
+                        </ul>
+                      </div>
+                    </div>
+
+
+
+
+
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <!--<div class="panel panel-warning m-t-30" *ngFor="let event of events" [routerLink]="['/dashboard/event/edit/', event.id]">
+              <div class="row">
+
+                <div class="col-xd-7 col-md-8 p-r-0">
+                  <div class="col-left">
+                    <img src="assets/icon/notif-icon@3x.png" height="25" />
+                  </div>
+                  <div class="col-right">
+                    <p class="m-b-0">
+
+                      <span *ngIf="event.guest=='' || event.guest==undefined; else elseBlock">
+                        <span class="add-guest" (click)="$event.stopPropagation();goToSearch(event.id)">Ajouter un guest</span>
+                      </span>
+                      <ng-template #elseBlock>{{event.guest}}</ng-template>
+                    </p>
+                    <p class="m-t-10 m-b-0">{{event.name}}
+                      <span class="f-right">{{event.place}}</span>
+                    </p>
+                  </div>
+
+                </div>
+                <div class="col-xd-2 col-md-4 wo-margin status">
+                  <div class="detail-event">
+                    <div class="day">{{event.theDate | toShortDate:'day'}}</div>
+
+                    <div>{{event.theDate | toShortDate:'mm yy'}}</div>
+                  </div>
+
+
+                </div>
+              </div>
+            </div>-->
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

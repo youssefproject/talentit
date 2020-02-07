@@ -1,0 +1,32 @@
+.search-box {
+    background: linear-gradient(90deg, #02E3FF, #676CE2);
+    border-radius: 8px;
+}
+
+.search-select-box {
+    padding-top: 30px;
+    padding-bottom: 25px;
+}
+
+.search-select {
+    //background-color: none;
+    background: none;
+    float: none;
+    border-radius: 8px;
+    border: solid 2px white;
+    color: white;
+}
+
+.search-select::placeholder {
+    color: white;
+}
+
+.search-btn {
+    border-radius: 160px;
+    width: 170px;
+}
+
+.search-box-h2 {
+    font-size: bold;
+    padding-top: 15px;
+}

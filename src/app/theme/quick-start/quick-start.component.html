@@ -1,0 +1,318 @@
+<form *ngIf="!isCreate" #createeventForm="ngForm" (ngSubmit)="suivant(createeventForm)">
+  <div class="line-fullscreen">
+
+
+    <div class="pcoded-wrapper">
+      <div class="pcoded-content">
+        <div class="pcoded-inner-content">
+          <!-- Main-body start -->
+          <div class="main-body">
+            <div class="page-wrapper quick-start">
+              <div *ngIf="i==0 || i==1 || i==2 || i==3 || i==4 || i==5 || i==6 || i==7 || i==8 || i==9 ">
+
+              <div class="row d-flex justify-content-center">
+
+                <div class=" p-t-30 text-center">
+                  <div class="  text-center d-flex justify-content-center">
+                    <h1>Dites nous en plus sur votre
+                      <br/>évènement </h1>
+                  </div>
+
+                </div>
+              </div>
+
+
+
+              <div class="row d-flex justify-content-center">
+                <div class="col-6 ">
+
+
+                  <input type="hidden" name="id" id="ngModel" [(ngModel)]="event.id">
+
+                  <div class="form-group">
+                    <div *ngIf="i==1 || i==3 || i==4|| i==5">
+                      <label>{{this.listQuestions[this.i-1].question}} </label>
+
+                      <input class="form-control" name="name" #name="ngModel" [(ngModel)]="this.listQuestions[this.i-1].answer" placeholder="{{this.listQuestions[this.i-1].placeholder}}"
+                        required>
+                      <div class="quick-warning-red">{{messageError}}</div>
+
+                    </div>
+
+
+                    <div *ngIf="i==2">
+                      <label>{{this.listQuestions[this.i-1].question}} </label>
+                      <br/>
+
+
+                      <select class="form-control" name="name" #name="ngModel" [(ngModel)]="this.listQuestions[this.i-1].answer" class="quick-start-select ">
+
+                        <option value="" disabled selected>Select your option</option>
+                        <option *ngFor="let te of typeEvent">
+                          {{te.type}}
+                        </option>
+
+                      </select>
+                      <div class="quick-warning-red">{{messageError}}</div>
+                    </div>
+                    <div *ngIf="i==6">
+                      <label>{{this.listQuestions[this.i-1].question}} </label>
+                      <br/>
+
+
+                      <div class="input-group">
+
+
+                        <div>
+                          <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="this.listQuestions[this.i-1].answer" type="date">
+                        </div>
+                        <div class="quick-warning-red">{{messageError}}</div>
+                        <!--
+                        ngbDatepicker #d="ngbDatepicker"
+                          (click)="d.toggle()"
+                        
+                      <div class="input-group-addon bg-default" (click)="d.toggle()" >
+          <span class="icofont icofont-ui-calendar"></span>
+        </div>-->
+                      </div>
+
+
+                    </div>
+
+
+
+                    <div *ngIf="i==9">
+                      <label>{{this.listQuestions[this.i-1].question}} </label>
+
+                      <select class="form-control" name="name" #name="ngModel" [(ngModel)]="this.listQuestions[this.i-1].answer" class="quick-start-select">
+                        <option>oui</option>
+                        <option>non</option>
+                      </select>
+                      <div class="quick-warning-red">{{messageError}}</div>
+                    </div>
+                    <div *ngIf="i==8 || i==7">
+                      <label>{{this.listQuestions[this.i-1].question}} </label>
+
+
+                      <!--select [(ngModel)]="this.listQuestions[this.i-1].answer" class="quick-start-select">
+                    <option *ngFor="let h of Hours" [value]="h.id" >
+                      {{h.h}}
+                    </option>
+                </select-->
+
+
+
+
+
+                      <input class="form-control" type="time" name="name" #name="ngModel" [(ngModel)]="this.listQuestions[this.i-1].answer" placeholder="{{this.listQuestions[this.i-1].placeholder}}"
+                        required>
+
+                      <div class="quick-warning-red">{{messageError}}</div>
+
+
+                    </div>
+                    <div *ngIf="i==10">
+
+                      <label>{{this.listQuestions[this.i-1].question}} </label>
+                      <textarea class="form-control" rows="6" cols="50" name="name" #name="ngModel" [(ngModel)]="this.listQuestions[this.i-1].answer"
+                        placeholder="{{this.listQuestions[this.i-1].placeholder}}" required>
+                      </textarea>
+                    </div>
+
+
+
+
+                  </div>
+                </div>
+
+
+
+              </div>
+              
+
+
+
+              
+
+            </div>
+            
+            <!--div *ngIf="i==10">
+              
+                <div *ngIf="this.showloader">
+                <div class=" p-t-30 text-center">
+                    <div class="  text-center d-flex justify-content-center">
+                      <h1>Votre événement a été créé avec succes </h1>
+                    </div>
+  
+                </div >
+                <div class="row d-flex justify-content-center">
+                    
+                       <img class="img img-responsive img-fluid"src="../../../assets/images/Capture.PNG">
+                     
+                </div>
+               </div>
+
+              </div-->
+            
+            
+            
+          </div>
+        </div>
+      </div>
+        
+      </div>
+    </div>
+    
+      
+  </div>
+  <div *ngIf="i==11">
+      <div class="row  justify-content-center">
+      <div class=" p-t-30 text-center">
+          <div class="  text-center d-flex justify-content-center">
+            <h1>Voulez-vous chercher un influenceur maintenant ? </h1>
+          </div>
+          </div>
+
+
+      </div >
+      
+          <div class="row padding  justify-content-center">
+              <div class="  text-center d-flex justify-content-center">
+                  <div class=" col-sm-8 col-md-8 col-lg-6 col-xl-6 d-flex justify-content-center">
+        
+              
+                 
+                  <svg width="400" height="400">
+                      <rect x="100" y="100" width="600" height="400"
+                      style="fill:blue;fill-opacity:0.1;stroke-opacity:0.9" />
+                      
+                  
+                </svg>
+              </div>
+           
+        
+              <div class=" col-sm-8 col-md-8 col-lg-6 col-xl-6 d-flex justify-content-center">
+              
+                <svg width="400" height="400">
+                    <rect x="100" y="100" width="600" height="400"
+                    style="fill:blue;fill-opacity:0.1;stroke-opacity:0.9" />
+                    
+                
+              </svg>
+              </div>
+            
+            </div>
+          </div>
+        
+        </div>
+      
+      
+
+    
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+  <!--div class="row" *ngIf=" listOfQuestions "-->
+
+
+
+
+<div *ngIf="i==0 ||i==1 || i==2 ||i==3 || i==4 ||i==5 || i==6 ||i==7 || i==8 ||i==9 || i==10 ">
+  <div class="quick-start-footer page-footer font-small stylish-color-dark">
+
+    <div class="row text-center" style="height: 100%;">
+      <div class="col-4 quick-start-cont">
+        <div *ngIf="i!==1" class="btn btn-primary quick-start-btn quick-start-past" (click)="precedent(createeventForm) ">
+          <!--i class="fa fa-floppy-o"></i-->
+          <img src="../../../assets/images/precedent@2x.png" width="8" class="quick-start-symbol" /> Précédent </div>
+      </div>
+
+      <div class="col-4 quick-start-cont">
+        <!--div *ngIf ="this.i>0"-->
+        <div class="quick-start-detail">
+          <span *ngFor="let s of j"> {{s}}
+            <img src="../../../assets/images/next@2x.png" width="8" class="quick-start-symbol" />
+          </span>
+          <!--/div -->
+          <!--/div-->
+        </div>
+      </div>
+      <div class="col-4 quick-start-cont">
+        <button type="button" class="btn btn-primary quick-start-btn quick-start-next" (click)="suivant(createeventForm) ">
+          <!--i class="fa fa-floppy-o"></i-->
+          Suivant
+          <img src="../../../assets/images/suivant@2x.png" width="8" class="quick-start-symbol" />
+        </button>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+
+
+</form>
+<div *ngIf="isCreate">
+  <div class="line-fullscreen">
+
+
+    <div class="pcoded-wrapper">
+      <div class="pcoded-content">
+        <div class="pcoded-inner-content">
+          <!-- Main-body start -->
+          <div class="main-body">
+            <div class="page-wrapper">
+
+
+              <div *ngIf="messageSuccess" class="quick-start-create-ok">Votre évènement a bien été crée! ✅</div>
+              <div class="quick-start-perfect">
+                <img [@quick-start-perfect-anim]="quickStartPerfectAnim" src="assets/images/perfect@2x.png" /> </div>
+              <div *ngIf="!messageSuccess">
+
+                <div class="row d-flex justify-content-center">
+
+                  <div class=" p-t-40 text-center">
+                    <div class="  text-center d-flex justify-content-center">
+                      <h1>Voulez-vous rechercher un
+                        <br/>influenceur maintenant ? </h1>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="row text-center padding d-flex justify-content-center">
+
+                  <div class="col-sm-8 col-md-8 col-lg-6 col-xl-4 d-flex justify-content-center " [routerLink]="['/search/']">
+                    <div class="quick-start-search quick-start-box">
+                      <img src="assets/icon/icon_search@2x.png" width="50" alt="">
+                      <div class="quick-start-box-title">Rechercher</div>
+                      <div class="quick-start-box-desc">J’ajoute un influenceur et lui demande un devis</div>
+                    </div>
+                  </div>
+                  <div class="col-sm-8 col-md-8 col-lg-6 col-xl-4 d-flex justify-content-center" [routerLink]="['/home']">
+                    <div class="quick-start-later quick-start-box">
+                      <img src="assets/icon/icon_ok@2x.png" width="50" alt="">
+                      <div class="quick-start-box-title">Plus tard</div>
+                      <div class="quick-start-box-desc">Je m’en occupe plus tard. J’ai un peu de temps</div>
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
