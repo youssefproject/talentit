@@ -144,7 +144,7 @@ export class SearchNewComponent implements OnInit, AfterViewInit {
     this.parseService.getGuest(gender).then(result => {
       console.log("getGuest ", result);
       result.forEach(element => {
-        console.log(element.get("name"));
+        console.log(element);
         people.push(element);
       });
     });

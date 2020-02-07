@@ -41,7 +41,7 @@ export class ConversationComponent implements OnInit {
           this.conversationId = message.conversationId;
           message.conversation = message.conversation.attributes;
           /* console.log("conversation.event ", conversation.eventId);
-          conversation.BEuserB = conversation.BEuserB.attributes;
+          conversation.TIuserB = conversation.TIuserB.attributes;
           if (conversation.status == 0) {
             conversation.status = "En attente";
           } */

@@ -52,15 +52,24 @@ export class InboxComponent implements OnInit {
         );
         conversation.id = idConversation;
         conversation.createdAt = createdAt;
+        console.log(conversation.event.id);
         conversation.eventId = conversation.event.id;
         conversation.event = conversation.event.attributes;
         this.theEvent = conversation.event;
-        console.log("conversation.event ", conversation.eventId);
+        console.log("conversation.event ", conversation);
+        console.log(Parse.User.current().get("isGuest"));
         if (Parse.User.current().get("isGuest")) {
-          conversation.BEuserB.name = conversation.userA.attributes.firstName;
-          conversation.BEuserB.avatar = conversation.userA.attributes.avatar;
+          conversation.TIuserB=null;
+          //conversation.TIuserB.name=null;
+          //conversation.TIuserB.avatar=null;
+          console.log(conversation)
+          console.log(conversation.userB);
+          console.log(conversation.userB.attributes.firstName);
+          //conversation.TIuserB.name = conversation.userB.attributes.firstName;
+          //conversation.TIuserB.avatar = conversation.userB.attributes.avatar;
         } else {
-          conversation.BEuserB = conversation.BEuserB.attributes;
+          console.log(conversation.TIuserB)
+          conversation.TIuserB = conversation.TIuserB.attributes;
         }
         if (conversation.status == 0) {
           conversation.status = "En attente";
@@ -78,4 +87,10 @@ export class InboxComponent implements OnInit {
   }
 
   ngOnInit() {}
+  isUserGuest(){
+    console.log(Parse.User.current().get("isGuest"));
+    return Parse.User.current().get("isGuest");
+  
+  }
 }
+

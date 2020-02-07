@@ -30,7 +30,6 @@
                       </select>
                     </div>
                     <div class="search-select-box col-lg-3">
-
                       <select name="select" class="search-select form-control" id="region" name="region">
                         <option value="opt1">Dans ma région</option>
                         <option value="opt2">Auvergne-Rhône-Alpes</option>
@@ -46,7 +45,6 @@
                         <option value="opt12">Occitanie</option>
                         <option value="opt13">Pays de la Loire</option>
                         <option value="opt14">Provence-Alpes-Côte d'Azur</option>
-
                       </select>
                     </div>
                     <div class="search-select-box col-lg-2 form-group">
@@ -100,7 +98,7 @@
 
             <div class="row compo-profile">
 
-              <app-profile-box *ngFor="let guest of people" class="col-lg-3 col-md-6 " eventId={{idE}} BEuserId={{guest.id}} name="{{guest.get('name')}}"
+              <app-profile-box *ngFor="let guest of people" class="col-lg-3 col-md-6 " eventId={{idE}} TIuserId={{guest.id}} name="{{guest.get('name')}}"
                 userId="{{guest.get('guest').id}}" image="{{guest.get('avatar')._url}}" [searchComponent]="this"></app-profile-box>
 
             </div>

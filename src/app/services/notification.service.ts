@@ -60,7 +60,7 @@ export class NotificationService {
 
   public getNotifications(): Promise<any> {
     return new Promise((resolve, reject) => {
-      const Notifications = Parse.Object.extend("BENotifications");
+      const Notifications = Parse.Object.extend("TINotifications");
       let query = new Parse.Query(Notifications);
       query.equalTo("user", Parse.User.current());
       query.include("who");

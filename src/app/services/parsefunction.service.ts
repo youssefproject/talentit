@@ -67,12 +67,12 @@ export class ParseFunctionService {
   ): Parse.Object {
     var eventPointer = {
       __type: 'Pointer',
-      className: 'BEEvents',
+      className: 'TIEvents',
       objectId: event
     }
     var guestPointer = {
       __type: 'Pointer',
-      className: 'BEUser',
+      className: 'TIUser',
       objectId: guest
     }
     theEventsConnect.set("guest", guestPointer);

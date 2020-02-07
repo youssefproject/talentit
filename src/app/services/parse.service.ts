@@ -25,7 +25,7 @@ export class ParseService {
 
   public newsSubscriptionNotifications() {
     if (!this.newsQuery) {
-      this.newsQuery = new Parse.Query("BENotifications");
+      this.newsQuery = new Parse.Query("TINotifications");
     }
     this.newsQuery.equalTo("user", Parse.User.current());
     return this.newsQuery.subscribe();
@@ -39,12 +39,12 @@ export class ParseService {
   public getEventsConnect(theEvent: string): Promise<any> {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        const EventConnect = Parse.Object.extend("BEEventsConnect");
+        const EventConnect = Parse.Object.extend("TIEventsConnect");
         let query = new Parse.Query(EventConnect);
         //query.equalTo("user", Parse.User.current());
         var eventPointer = {
           __type: "Pointer",
-          className: "BEEvents",
+          className: "TIEvents",
           objectId: theEvent
         };
         query.equalTo("event", eventPointer);
@@ -68,7 +68,7 @@ export class ParseService {
     guest: string,
     withInvitation: number
   ): Observable<any> {
-    var EventsConnect = Parse.Object.extend("BEEventsConnect");
+    var EventsConnect = Parse.Object.extend("TIEventsConnect");
     var theEvent = new EventsConnect();
     theEvent = this.parseFun.fillEventsConnect(
       theEvent,
@@ -90,7 +90,7 @@ export class ParseService {
   }
 
   public removeConnectsEvent(_id: string): Observable<any> {
-    var Event = Parse.Object.extend("BEEventsConnect");
+    var Event = Parse.Object.extend("TIEventsConnect");
     var query = new Parse.Query(Event);
     query.equalTo("objectId", _id);
     let theService = this.parseFun;
@@ -119,7 +119,7 @@ export class ParseService {
     _id: string,
     status: number
   ): Observable<any> {
-    var Event = Parse.Object.extend("BEEventsConnect");
+    var Event = Parse.Object.extend("TIEventsConnect");
     var query = new Parse.Query(Event);
     query.equalTo("objectId", _id);
     let theService = this.parseFun;
@@ -154,7 +154,7 @@ export class ParseService {
   //------------------------------------GUEST------------------------------------------
   public getGuest(gender: number): Promise<any> {
     return new Promise((resolve, reject) => {
-      const Guest = Parse.Object.extend("BEUser");
+      const Guest = Parse.Object.extend("TIUser");
 
       let query = new Parse.Query(Guest);
       if (gender == 1) {
@@ -188,7 +188,7 @@ export class ParseService {
     }
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        const Events = Parse.Object.extend("BEEvents");
+        const Events = Parse.Object.extend("TIEvents");
         let query = new Parse.Query(Events);
         query.find().then(
           results => {
@@ -205,7 +205,7 @@ export class ParseService {
   public getEvent(_id: string): Promise<any> {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        const Event = Parse.Object.extend("BEEvents");
+        const Event = Parse.Object.extend("TIEvents");
         let query = new Parse.Query(Event);
         query.equalTo("objectId", _id);
         query.first({
@@ -229,7 +229,7 @@ export class ParseService {
     place: string,
     desc: string
   ): Observable<any> {
-    var Events = Parse.Object.extend("BEEvents");
+    var Events = Parse.Object.extend("TIEvents");
     var theEvent = new Events();
     theEvent = this.parseFun.fillEvent(
       theEvent,
@@ -264,7 +264,7 @@ export class ParseService {
     place: string,
     desc: string
   ): Observable<any> {
-    var Event = Parse.Object.extend("BEEvents");
+    var Event = Parse.Object.extend("TIEvents");
     var query = new Parse.Query(Event);
     query.equalTo("objectId", _id);
     let theService = this.parseFun;
@@ -409,15 +409,15 @@ export class ParseService {
     return new Promise((resolve, reject) => {
       /*  var eventPointer = {
         __type: "Pointer",
-        className: "BEEvents",
+        className: "TIEvents",
         objectId: eventId
       }; */
 
-      let queryA = new Parse.Query("BEConversations");
+      let queryA = new Parse.Query("TIConversations");
       queryA.equalTo("userA", Parse.User.current());
       //queryA.equalTo("event", eventPointer);
 
-      let queryB = new Parse.Query("BEConversations");
+      let queryB = new Parse.Query("TIConversations");
       queryB.equalTo("userB", Parse.User.current());
       //queryB.equalTo("event", eventPointer);
 
@@ -425,14 +425,14 @@ export class ParseService {
       if (idE) {
         var ptrEvent = {
           __type: "Pointer",
-          className: "BEEvents",
+          className: "TIEvents",
           objectId: idE
         };
         query.equalTo("event", ptrEvent);
       }
       query.include("event");
       query.include("userA");
-      query.include("BEuserB");
+      query.include("TIuserB");
       query.find().then(
         results => {
           console.log("resultsconversation ", results);
@@ -447,10 +447,10 @@ export class ParseService {
 
   public getConversation(id: string): Promise<any> {
     return new Promise((resolve, reject) => {
-      let query = new Parse.Query("BEConversations");
+      let query = new Parse.Query("TIConversations");
       query.equalTo("objectId", id);
       query.include("event");
-      query.include("BEuserB");
+      query.include("TIuserB");
       query.first({
         success: function(result) {
           resolve(result);
@@ -475,15 +475,15 @@ export class ParseService {
     return new Promise((resolve, reject) => {
       var ptrConversation = {
         __type: "Pointer",
-        className: "BEConversations",
+        className: "TIConversations",
         objectId: idConversation
       };
 
-      let queryA = new Parse.Query("BEMessages");
+      let queryA = new Parse.Query("TIMessages");
       queryA.equalTo("userA", Parse.User.current());
       //queryA.equalTo("event", eventPointer);
 
-      let queryB = new Parse.Query("BEMessages");
+      let queryB = new Parse.Query("TIMessages");
       queryB.equalTo("userB", Parse.User.current());
       //queryB.equalTo("event", eventPointer);
 

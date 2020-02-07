@@ -11,7 +11,7 @@ export class ProfileBoxComponent {
   @Input() image: string;
   @Input() adresse: string;
   @Input() eventId: string;
-  @Input() BEuserId: string;
+  @Input() TIuserId: string;
   @Input() userId: string;
 
   @Input() searchComponent: SearchNewComponent;
@@ -21,7 +21,7 @@ export class ProfileBoxComponent {
   reserver() {
     var thos = this;
     Parse.Cloud.run("newConversation", {
-      BEUserB: this.BEuserId,
+      TIUserB: this.TIuserId,
       userB: this.userId,
       eventId: this.eventId
     }).then(

@@ -57,15 +57,23 @@
                 <div *ngFor="let conversation of conversations" class="inbox-box" [routerLink]="['/event/',conversation.id]">
                   <div class="row">
                     <div class="col-2">
-                      <div class="inbox-box-avatar">
-                        <img src="{{conversation.BEuserB.avatar._url}}" height="98" width="98" />
-                        <!-- <img src="{{conversation.BEuserB.avatar}}" height="98" width="98" /> -->
+                      <div *ngIf="isUserGuest()" class="inbox-box-avatar">
+                        <img src="{{conversation.userB.attributes.avatar._url}}" height="98" width="98" />
+                        <!-- <img src="{{conversation.TIuserB.avatar}}" height="98" width="98" /> -->
+                      </div>
+                      <div *ngIf="!isUserGuest()" class="inbox-box-avatar">
+                        <img src="{{conversation.TIuserB.avatar._url}}" height="98" width="98" />
+                        <!-- <img src="{{conversation.TIuserB.avatar}}" height="98" width="98" /> -->
                       </div>
                     </div>
 
                     <div class="inbox-box-time col-3">
-                      <div class="inbox-box-center">
-                        <div class="inbox-box-title">{{conversation.BEuserB.name}}</div>
+                      <div *ngIf="isUserGuest()" class="inbox-box-center">
+                        <div class="inbox-box-title">{{conversation.userB.attributes.firstName}}</div>
+                        <div class="inbox-box-desc">{{conversation.createdAt | timeAgo}}</div>
+                      </div>
+                      <div *ngIf="!isUserGuest()" class="inbox-box-center">
+                        <div class="inbox-box-title">{{conversation.TIuserB.name}}</div>
                         <div class="inbox-box-desc">{{conversation.createdAt | timeAgo}}</div>
                       </div>
                     </div>
