@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from "@angular/forms";
 import { ParseService } from '../../../services/parse.service';
 @Component({
-  selector: 'app-influencerreg',
-  templateUrl: './influencerreg.component.html',
-  styleUrls: ['./influencerreg.component.scss']
+  selector: 'app-prestareg',
+  templateUrl: './prestareg.component.html',
+  styleUrls: ['./prestareg.component.scss']
 })
-export class InfluencerregComponent implements OnInit {
+export class PrestaregComponent implements OnInit {
 
   social: string;
   public quickStartPerfectAnim: string;
@@ -151,7 +151,7 @@ export class InfluencerregComponent implements OnInit {
 
   register() {
     console.log(this.email, this.password, this.gender, this.type, this.name, this.lastname, this.brandadresse, this.social, this.tel);
-    this.parseService.registerInfluencer(this.email, this.password, this.gender, this.type, this.name, this.lastname, this.brandadresse, this.social, this.tel)
+    this.parseService.registerPresta(this.email, this.password, this.gender, this.type, this.name, this.lastname, this.brandadresse, this.social, this.tel)
       .subscribe(result => {
         this.i++;
       });

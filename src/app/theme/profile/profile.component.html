@@ -1,4 +1,40 @@
+<!-- <div class="line-fullscreen">
+
+
+  <div class="pcoded-wrapper">
+    <div class="pcoded-content">
+      <div class="pcoded-inner-content"> -->
+<!-- Main-body start -->
+<!-- <div class="main-body">
+          <div class="page-wrapper">
+
+            profile works!
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
 <div class="line-fullscreen">
+  <div *ngIf="!isGuest" class="conversation-full">
+    <img src="assets/images/youssefcover.jpg" alt="">
+    <div class="conversation-full-overlay">
+
+    </div>
+    <div class="conversation-full-content">Youssef DJ et Guitariste</div>
+
+
+  </div>
+
+  <div *ngIf="isGuest" class="conversation-full-g">
+    <div class="conversation-full-guest">
+
+    </div>
+    <div class="conversation-full-content">Soirée Rooftop</div>
+
+
+  </div>
 
 
   <div class="pcoded-wrapper">
@@ -8,7 +44,83 @@
         <div class="main-body">
           <div class="page-wrapper">
 
-            profile works!
+
+
+
+
+            <div class="row">
+
+              <div class="col-8">
+
+                <div class="conversation-warning">Youssef est encore disponible pour cette date.
+                  <span class="heavy">Réservez le dès maintenant!</span>
+                </div>
+                <div class="row">
+                  <div class="m-t-40">
+                    <div style=" margin-left: 20%; margin-right: auto; width: 90%;">
+                      <iframe width="560" height="315" src="https://www.youtube.com/embed/1ozGKlOzEVc" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                  </div>
+                </div>
+
+
+
+
+              </div>
+              <div class="col-4 conversation-box-booking">
+                <div *ngIf="!isGuest" class="conversation-box-book">
+                  <div class="conversation-box-book-header">
+                    <div class="conversation-box-book-header-from">
+                      à partir de
+                    </div>
+                    <div class="conversation-box-book-header-price">
+                      3 000€
+                    </div>
+                  </div>
+                  <div class="conversation-box-book-body">
+                    <div class="conversation-box-book-button-ok">Réserver</div>
+                    <div class="conversation-box-book-button-cancel">Décliner</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row m-t-40">
+              <div class="col-8">
+
+                <div class="conversation-warning">
+                  <div class="heavy box-header" style="margin-left: 2%;">
+                    Présentation
+                  </div>
+                  <div class=" multicolumn">
+                    <ul class="multicolumn-column mod1-2">
+                      <li style="margin-left: 3%; margin-top : 2%;">
+                        2 avis positifs
+                      </li>
+                      <li   style="margin-left: 3%; margin-top : 3%;">
+                        pays : France, Paris
+                      </li>
+                      <li  style="margin-left: 3%; margin-top : 3%;">
+                        Talent : DJ + Guitariste
+                      </li>
+                      <li  style="margin-left: 3%; margin-left:3%; margin-top : 2%;">
+                        Membre depuis Octobre 2019
+                      </li>
+                    </ul>
+
+                    <!-- <div class="box-content">
+                      2 avis positifs
+                    </div> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-12 col-box-boost ">
+                <div class="profile-info ">
+                  <div class="profile-info-title">Recent Events</div>
+
+            </div>
+
           </div>
         </div>
       </div>

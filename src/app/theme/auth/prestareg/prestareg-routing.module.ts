@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import{ InfluencerregComponent } from './influencerreg.component';
+import{ PrestaregComponent } from './prestareg.component';
 const routes: Routes = [
   {
     path: '',
-    component: InfluencerregComponent,
+    component: PrestaregComponent,
     data: {
-      title: 'Influencer'
+      title: 'prestataire'
     }
   }
 ];
@@ -15,4 +15,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class InfluencerregRoutingModule { }
+export class PrestaregRoutingModule { }

@@ -92,12 +92,12 @@ export class ConversationComponent implements OnInit {
     $(".conversation-box-booking").css("margin-top", marginTop * (1 - alpha));
     $(".conversation-see-profile").css("opacity", 1 - alpha2);
     $(".conversation-full-content").css("opacity", 1 - alpha2);
-    console.log(
-      "alpha2 ",
-      $(window).scrollTop(),
-      " / ",
-      $(".pcoded-wrapper").offset().top - 90
-    );
+    // console.log(
+    //   "alpha2 ",
+    //   $(window).scrollTop(),
+    //   " / ",
+    //   $(".pcoded-wrapper").offset().top - 90
+    // );
     if ($(window).scrollTop() > $(".pcoded-wrapper").offset().top - 90) {
       //$(".conversation-box-book").css("position", "fixed");
       this.changeColor(false);
@@ -154,5 +154,11 @@ export class ConversationComponent implements OnInit {
       }
     );
     this.newMessage = "";
+  }
+
+  isUserBGuest(){
+    console.log(Parse.User.current().get("isGuest"));
+    return Parse.UserB.get("isGuest");
+  
   }
 }

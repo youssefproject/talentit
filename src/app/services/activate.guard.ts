@@ -21,7 +21,7 @@ export class ActivateGuardService implements CanActivate {
               this.router.navigate(["auth/waiting"]);
             } else {
               if (Parse.User.current().get("isGuest")) {
-                this.router.navigate(["auth/profile/influenceur"]);
+                this.router.navigate(["auth/profile/presta"]);
               } else {
                 this.router.navigate(["auth/profile/brand"]);
               }

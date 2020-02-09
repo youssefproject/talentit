@@ -335,7 +335,7 @@ export class ParseService {
     });
   }
 
-  public registerInfluencer(username: string, password: string, isMan: boolean, type : Number, firstName: string, lastName: string, brandadresse: string, social : string, tel: string): Observable<boolean> {
+  public registerPresta(username: string, password: string, isMan: boolean, type : Number, firstName: string, lastName: string, brandadresse: string, social : string, tel: string): Observable<boolean> {
     return new Observable(observer => {
       var user = new Parse.User();
       user.set("username", username);

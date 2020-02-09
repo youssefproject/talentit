@@ -100,6 +100,9 @@ export class QuickStartComponent implements OnInit {
     };
 
     //this.objSelected = this.listQuestions[this.i];
+
+    //TODO : rduire le nombre de questions
+    //nb d'etoile
     let question5 = {
       question: "Connaissez-vous l'adresse exacte de l'évènement?",
       answer: "",

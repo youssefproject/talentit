@@ -5318,6 +5318,16 @@ a[data-toggle="lightbox"] .img-fluid {
     padding: 20px;
 }
 
+.profile-info {
+    padding:20px;
+}
+
+.profile-info-title {
+    color: #444444;
+    font-size: 26px;
+    padding: 15px;
+}
+
 .event-boxes {
     -webkit-overflow-scrolling: touch;
     overflow-x: scroll;
@@ -5727,7 +5737,8 @@ body:not(.guys-phone) .guys-frame-home-artistfollow li:hover {
     position: absolute;
     text-align: center;
     z-index: 2;
-    top: 50%;
+    top: 80%;
+    right: 20%;
     transform: perspective(1px) translateY(-50%);
 }
 
@@ -5935,15 +5946,15 @@ body:not(.guys-phone) .guys-frame-home-artistfollow li:hover {
     cursor: pointer; //margin-left: 1px;
 }
 
-.influencerreg-desc-particulier {
+.prestareg-desc-particulier {
     padding-top: 70px;
 }
 
-.influencer-celebrite {
+.presta-celebrite {
     background-color: #676CE2
 }
 
-.influencer-manager {
+.presta-manager {
     background: #FE4869;
 }
 
@@ -5951,7 +5962,7 @@ body:not(.guys-phone) .guys-frame-home-artistfollow li:hover {
     background: #676CE2;
 }
 
-.influenceur-social-padding {
+.presta-social-padding {
     padding-top: 20px;
 }
 

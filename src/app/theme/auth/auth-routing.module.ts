@@ -14,8 +14,8 @@ const routes: Routes = [
         loadChildren: "./login/login.module#LoginModule"
       },
       {
-        path: "influencer",
-        loadChildren: "./influencerreg/influencerreg.module#InfluencerregModule"
+        path: "presta",
+        loadChildren: "./prestareg/prestareg.module#PrestaregModule"
       },
       {
         path: "brand",
@@ -26,7 +26,7 @@ const routes: Routes = [
         loadChildren: "./brandreg/brandreg.module#BrandregModule"
       },
       {
-        path: "profile/influenceur",
+        path: "profile/presta",
         loadChildren: "./brandreg/brandreg.module#BrandregModule"
       },
       {

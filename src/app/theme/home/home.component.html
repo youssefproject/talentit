@@ -10,18 +10,18 @@
 
 
 
-            <div class="line_warning">
+            <div *ngIf="!isGuest"  class="line_warning">
               <div class="small-close">
                 <img src="assets/images/small-close@2x.png" height="22" />
               </div>
-              <div class="row">
+              <div   class="row m-t-20">
                 <div class=" warning-icon">
                   <img src="assets/images/stock-vector-vector-illustration-light-bulb-with-rays-shine-energy-and-idea-symbol-decoration-for-greeting@2x.png"
                     height="64" />
                 </div>
                 <div class="col-6 warning-text m-t-30 ">
                   <div class="warning-title">Félicitation…!</div>
-                  <div class="warning-desc p-t-5">Votre compte est bien activé. Créez un évènement et invitez des influenceurs!</div>
+                  <div class="warning-desc p-t-5">Votre compte est bien activé. Créez un évènement et invitez des talents!</div>
                 </div>
                 <div class="col-4">
                   <div class="warning-button" [routerLink]="[ '/quick-start/']">Commencer</div>

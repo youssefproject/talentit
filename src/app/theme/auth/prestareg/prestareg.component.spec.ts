@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { InfluencerregComponent } from './influencerreg.component';
+import { PrestaregComponent } from './prestareg.component';
 
-describe('InfluencerregComponent', () => {
-  let component: InfluencerregComponent;
-  let fixture: ComponentFixture<InfluencerregComponent>;
+describe('PrestaregComponent', () => {
+  let component: PrestaregComponent;
+  let fixture: ComponentFixture<PrestaregComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ InfluencerregComponent ]
+      declarations: [ PrestaregComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(InfluencerregComponent);
+    fixture = TestBed.createComponent(PrestaregComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
