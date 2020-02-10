@@ -5189,7 +5189,7 @@ a[data-toggle="lightbox"] .img-fluid {
     border-radius: 30px;
     box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    padding: 0px;
+    padding-right: 2px;
 }
 
 .small-close {
@@ -5272,6 +5272,7 @@ a[data-toggle="lightbox"] .img-fluid {
 .profile-box-img {
     width: 100%;
     height: 270px;
+    cursor: pointer;
 }
 
 .profile-box-img img {
@@ -5283,6 +5284,7 @@ a[data-toggle="lightbox"] .img-fluid {
 .profile-box-title {
     padding: 25px;
     font-size: 22px;
+    cursor: pointer;
 }
 
 .profile-box-component-title {
@@ -5404,6 +5406,10 @@ a[data-toggle="lightbox"] .img-fluid {
 }
 
 .event-box-dec {
+    font-size: 19px;
+}
+.profile-description{
+    font-family: "AvenirNext Demi";
     font-size: 19px;
 }
 
@@ -5612,16 +5618,23 @@ body:not(.guys-phone) .guys-frame-home-artistfollow li:hover {
 }
 
 .inbox-box-status-title {
-    padding: 5px;
+    // padding: 5px;
+    margin-top: -3%;
     padding-left: 10px;
     padding-right: 10px;
     border-radius: 30px;
     text-align: center;
 }
 
+.star-green{
+    color: #4CAF50;
+}
+
 .inbox-box-status-grey {
-    background: #E0E0E0;
-    color: #6B6B6B;
+    // background: #E0E0E0;
+    color: #4CAF50;
+    font-size: 15px;
+    font-family: "AvenirNext Demi";
 }
 
 .inbox-add-guest {
@@ -5631,6 +5644,64 @@ body:not(.guys-phone) .guys-frame-home-artistfollow li:hover {
     text-align: center;
     cursor: pointer;
 }
+
+.profile-reference-center{
+        position: absolute;
+        top: 50%;
+        transform: perspective(1px) translateY(-50%);
+        
+        font-family: "AvenirNext Demi";
+}
+
+.profile-reference-writter{
+    font-family: "AvenirNext Demi";
+    font-size: 18px;
+
+}
+
+.profile-reference-content{
+    margin-left : 170px; 
+}
+
+.profile-reference-confirmed{
+    display: inline-block;
+    padding: 4px;
+    border-radius: 100px;
+    margin-left: 155px;
+    margin-right: 25px
+}
+
+.profile-reference-date{
+    font-family: "AvenirNext Demi";
+    padding-top: 17px;
+    font-size: 16px;
+
+}
+
+.profile-box-desc {
+    font-family: "AvenirNext Demi";
+    padding-top: 1px;
+    font-size: 16px;
+}
+
+.profile-picture-screen{
+    position: relative;
+    margin-top: -110px;
+}
+
+
+.profile-name-desc {
+    color: white;
+    font-size: 55px;
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    z-index: 2;
+    top: 60%;
+    right: 20%;
+    transform: perspective(1px) translateY(-50%);
+}
+
 
 .conversation-full img {
     width: 100%;
@@ -5658,6 +5729,7 @@ body:not(.guys-phone) .guys-frame-home-artistfollow li:hover {
     z-index: 1;
     top: 0;
     opacity: 0.2;
+    display: none;
 }
 
 .conversation-full-guest {

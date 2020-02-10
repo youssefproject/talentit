@@ -29,7 +29,8 @@ export class BrandregComponent implements OnInit {
   gender: string;
   type: number;
   name: string;
-
+  email: string;
+  password: string;
   lastname: string;
   celebrityname: string = "";
   city: string;
@@ -44,13 +45,24 @@ export class BrandregComponent implements OnInit {
   isCreate: boolean = false;
   nomgerant: string;
   actualRoute = "";
-  social: number;
+  isGuest: boolean = false;
+  social: string;
   constructor(private _router: Router, private parseService: ParseService) {
     this.quickStartPerfectAnim = "off";
     //Parse.User.current().fetch();
     //console.log("userconnecte ", Parse.User.current());
     var tab = _router.url.split("/");
-    if (tab.length == 4) this.actualRoute = tab[3];
+    if (tab.length == 4) {
+      this.actualRoute = tab[3];
+      console.log(this.actualRoute);
+      if(this.actualRoute == "presta" ){
+        console.log('oui');
+        this.isGuest=true;
+      }else{
+        this.isGuest=false;
+      }
+    }
+
   }
 
   ngOnInit() {
@@ -107,25 +119,29 @@ export class BrandregComponent implements OnInit {
     this.i++;
   }
   facebook() {
-    this.social = 1;
+    this.social = "facebook";
     this.i++;
   }
   twitter() {
-    this.social = 2;
+    this.social = "twitter";
     this.i++;
   }
   youtube() {
-    this.social = 3;
+    this.social = "youtube";
     this.i++;
   }
   snapchat() {
-    this.social = 4;
+    this.social = "snapchat";
     this.i++;
   }
   info(brandregForm: NgForm) {
-    if (this.name == "" || this.lastname == "") {
+    if (this.name == "" || this.lastname == "" || this.email == "" || this.password =="") {
       this.messageError = "Ces champs ne peuvent pas étre vide";
       return;
+    }
+
+    if(this.i==3 && ( this.type==0|| this.type==2)){
+      this.i++;
     }
 
     this.messageError = "";
@@ -133,7 +149,6 @@ export class BrandregComponent implements OnInit {
   }
 
   infobrand(brandregForm: NgForm) {
-    console.log("wa7ed");
 
     if (
       (this.type == 0 || this.type == 1 || this.type == 2) &&
@@ -148,6 +163,8 @@ export class BrandregComponent implements OnInit {
       this.messageError = "Ces champs ne peuvent pas étre vide";
       return;
     }
+    console.log("avant de passer");
+    
 
     this.messageError = "";
     this.i++;
@@ -211,7 +228,7 @@ export class BrandregComponent implements OnInit {
     celebrityname: string,
     city: string,
     adresse: string,
-    social: number,
+    social: string,
     tel: string,
     brandname: string,
     brandadresse: string,
@@ -240,7 +257,7 @@ export class BrandregComponent implements OnInit {
     theUser.set("isMan", isMan);
     theUser.set("type", type);
     theUser.set("social", social);
-    theUser.set("firstname", name);
+    theUser.set("firstName", name);
     theUser.set("lastName", lastname);
     theUser.set("city", city);
     theUser.set("celebrityname", celebrityname);
@@ -253,6 +270,12 @@ export class BrandregComponent implements OnInit {
     theUser.set("nomgerant", nomgerant);
 
     theUser.save();
+
+
+
+    this.parseService.registerPresta(this.email,this.password, isMan, type, name, lastname, brandadresse, social, tel).subscribe(rsult =>{
+      console.log("c'est fait");
+    })
   }
   /*addUserBrand(
     gender: string,

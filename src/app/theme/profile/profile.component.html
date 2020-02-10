@@ -16,22 +16,25 @@
   </div>
 </div> -->
 
+
+
 <div class="line-fullscreen">
   <div *ngIf="!isGuest" class="conversation-full">
     <img src="assets/images/youssefcover.jpg" alt="">
     <div class="conversation-full-overlay">
 
     </div>
-    <div class="conversation-full-content">Youssef DJ et Guitariste</div>
+    <div class="profile-name-desc">Youssef DJ et Guitariste</div>
 
 
   </div>
 
-  <div *ngIf="isGuest" class="conversation-full-g">
-    <div class="conversation-full-guest">
+  <div class="profile-picture-screen">
 
+    <div class="inbox-box-avatar">
+      <img src="{{theUser.get('avatar')._url}}" height="200" width="200" />
+      <!-- <img src="{{conversation.TIuserB.avatar}}" height="98" width="98" /> -->
     </div>
-    <div class="conversation-full-content">Soirée Rooftop</div>
 
 
   </div>
@@ -55,13 +58,57 @@
                 <div class="conversation-warning">Youssef est encore disponible pour cette date.
                   <span class="heavy">Réservez le dès maintenant!</span>
                 </div>
-                <div class="row">
-                  <div class="m-t-40">
-                    <div style=" margin-left: 20%; margin-right: auto; width: 90%;">
-                      <iframe width="560" height="315" src="https://www.youtube.com/embed/1ozGKlOzEVc" frameborder="0" allowfullscreen></iframe>
-                    </div>
+
+
+                <nav style="    background-color: #fff;
+                  border-bottom: 2px solid rgba(0,0,0,0.15);
+                  border-radius: 2px;
+                  margin: 10px auto;
+                  position: relative;
+                  display: block;
+                  box-sizing: border-box;">
+                  <div class="inbox-menu" style="   border-top: 0;
+                           text-align: center;            box-sizing: border-box; display: block;">
+                    <!-- text-align: center;   -->
+                    <!-- inbox-menu -->
+                    <!-- <div class="row" style="margin:10px auto; position: relative; border-radius: 2px;  border-bottom: 2px solid rgba(0,0,0,0.15); "> -->
+                    <ul class=" col-8 tabs-list " role="tablist" style="    text-align: left;     list-style-type: none;
+                        margin: 0 0 1em 0;
+                        padding: 0;     box-sizing: border-box; margin-block-start: 1em;
+                        margin-block-end: 1em;
+                        margin-inline-start: 0px;
+                        margin-inline-end: 0px;
+                        padding-inline-start: 40px; display: block; "> </ul>
+                    <li style="    display: inline-block;
+                      margin: 10px 30px 10px 0;
+                      vertical-align: middle; box-sizing: border-box; text-align: -webkit-match-parent;" role="tab" [ngClass]="{selected: actualRoute=='about' || actualRoute==''}"
+                      [routerLink]="['/profile/about']">
+                      À propos
+                    </li>
+                    <li [ngClass]="{selected: actualRoute=='references'}" style="    display: inline-block;
+                      margin: 10px 30px 10px 0;
+                      vertical-align: middle; box-sizing: border-box; text-align: -webkit-match-parent;" role="tab" [routerLink]="['/profile/references']">
+                      Avis
+                    </li>
+                    <li style="    display: inline-block;
+                      margin: 10px 30px 10px 0;
+                      vertical-align: middle; box-sizing: border-box; text-align: -webkit-match-parent;" role="tab" [ngClass]="{selected: actualRoute=='photos'}"
+                      [routerLink]="['/profile/photos']">
+                      Photos et videos
+                    </li>
+                    <li style="    display: inline-block;
+                      margin: 10px 30px 10px 0;
+                      vertical-align: middle; box-sizing: border-box; text-align: -webkit-match-parent;" role="tab" [ngClass]="{selected: actualRoute=='availability'}"
+                      [routerLink]="['/profile/availability']">
+                      Disponibilité
+
+                    </li>
+
+
+                    <!-- </div> -->
                   </div>
-                </div>
+
+                </nav>
 
 
 
@@ -84,40 +131,386 @@
                 </div>
               </div>
             </div>
-            <div class="row m-t-40">
-              <div class="col-8">
+            <div *ngIf="actualRoute==='about' || actualRoute===''">
+              <div class="row">
+                
+                <div class="col-8 col-box-boost  ">
+                  <div class="profile-info" style="color: #444444;
+                  padding: 15px; font-size:25px; ">
+                    <div>
+                      À propos de moi:
+                    </div>
 
-                <div class="conversation-warning">
-                  <div class="heavy box-header" style="margin-left: 2%;">
-                    Présentation
+                    <div class=" profile-description " style="color: #444444;
+                      padding: 15px; ">
+                      Bonjour et bienvenue sur mon profile Boostevent,
+                      <br/> 
+                      <br/> Je m'apelle Youssef, 24 ans et je vis à Rabat, J'ai étudié au concervatoire international de Rabat
+                      au Maroc, ou je me suis spécialisé en Oud, c'est un joli instrument oriental qui sonne trés bien.
+                      <br/> Je vous propose donc une variété de musique, et vous promet une animation que vous allez jamais y
+                      regretter.
+                      <br/> Avec mon groupe compétant :
+                      <br/> Anass : Violoniste professionnel
+                      <br/> Mouad: Pianiste hors du commun
+                      <br/> Asmae: Une voie de faie, qui vous emmenerait à Jupiter
+                      <br/> Pour plus d'informations, n'hésitez pas à nous envoyer un message, nous serons ravi de vous faire
+                      passer un événement inoubliable
+                    </div>
                   </div>
-                  <div class=" multicolumn">
-                    <ul class="multicolumn-column mod1-2">
-                      <li style="margin-left: 3%; margin-top : 2%;">
-                        2 avis positifs
-                      </li>
-                      <li   style="margin-left: 3%; margin-top : 3%;">
-                        pays : France, Paris
-                      </li>
-                      <li  style="margin-left: 3%; margin-top : 3%;">
-                        Talent : DJ + Guitariste
-                      </li>
-                      <li  style="margin-left: 3%; margin-left:3%; margin-top : 2%;">
-                        Membre depuis Octobre 2019
-                      </li>
-                    </ul>
+                </div>
+                </div>
+                </div>
 
-                    <!-- <div class="box-content">
-                      2 avis positifs
-                    </div> -->
+
+
+                <div *ngIf="actualRoute==='references' ">
+                  <div class="col-9 col-box-boost  ">
+                    <div class="profile-info" style="color: #444444;
+                  padding: 15px; font-size:25px; ">
+                  <!-- <div  class="inbox-box" > -->
+                  <div class="row" style="position: relative;">
+                    <div class="col-2">
+                      <div class="inbox-box-avatar">
+                        <img src="{{theUser.get('avatar')._url}}" height="98" width="98" />
+                        <!-- <img src="{{conversation.TIuserB.avatar}}" height="98" width="98" /> -->
+                      </div>
+                    </div>
+
+                    <div class=" col-3">
+                      <div class="inbox-box-center">
+                        <div class="profile-reference-writter">youssef Kriouile</div>
+                        <div class="inbox-box-place profile-reference-writter" style="box-sizing: border-box; display: block;
+                                   
+                                    font-size: 0.8225em;
+                                    position: relative; 
+                                    word-wrap: break-word;">Paris, France</div>
+                        <div class="profile-box-desc" style="    color: #929dad; font-size: 0.8125em;  ">
+                          <a href="javascript:">
+                            <i class="fa fa-star f-18 star-green "></i>
+                          </a>
+                          <a href="javascript:">
+                            <i class="fa fa-star f-18 star-green"></i>
+                          </a>
+                          <a href="javascript:">
+                            <i class="fa fa-star f-18 star-green"></i>
+                          </a>
+                          <a href="javascript:">
+                            <i class="fa fa-star f-18 star-green"></i>
+                          </a>
+                          <a href="javascript:">
+                            <i class="fa fa-star f-18 star-green"></i>
+                          </a>
+                          (8 avis)</div>
+
+                      </div>
+                    </div>
+                    <div class=" col-4">
+                      <div class="inbox-box-center">
+                        <!-- <div class="">Soirée Rooftop</div> -->
+                      </div>
+                    </div>
+                    <div class="inbox-box-status col-2">
+                      <div class="profile-reference-date" style="color: #929dad;">hier </div>
+
+                    </div>
+                  
+                  <div class="row " style="position:relative;">
+                    <div class="profile-reference-confirmed">
+                      <div class="inbox-box-status-title inbox-box-status-grey"> Événement confirmé et inviterait Youssef de nouveau </div>
+                    </div>
+
+
+                  </div>
+                  <div class="row" style="position:relative;">
+                    <div class="profile-reference-content">
+                      <div class="profile-reference-writter">
+                        Youssef est un super DJ et anime parfaitement la soirée, merci Youssef, c'était sympa de te voir et j'espére que tu réussira
+                        dans ta platforme et que tu deviennes le future de l'événementiel
+                      </div>
+                    </div>
+                  
+
+                </div>
+                </div>
+                </div>
+              </div>
+
+              <div class="col-9 col-box-boost  ">
+                  <div class="profile-info" style="color: #444444;
+                padding: 15px; font-size:25px; ">
+                <!-- <div  class="inbox-box" > -->
+                <div class="row" style="position: relative;">
+                  <div class="col-2">
+                    <div class="inbox-box-avatar">
+                      <img src="{{theUser.get('avatar')._url}}" height="98" width="98" />
+                      <!-- <img src="{{conversation.TIuserB.avatar}}" height="98" width="98" /> -->
+                    </div>
+                  </div>
+
+                  <div class=" col-3">
+                    <div class="inbox-box-center">
+                      <div class="profile-reference-writter">youssef Kriouile</div>
+                      <div class="inbox-box-place profile-reference-writter" style="box-sizing: border-box; display: block;
+                                 
+                                  font-size: 0.8225em;
+                                  position: relative; 
+                                  word-wrap: break-word;">Paris, France</div>
+                      <div class="profile-box-desc" style="    color: #929dad; font-size: 0.8125em;  ">
+                        <a href="javascript:">
+                          <i class="fa fa-star f-18 star-green "></i>
+                        </a>
+                        <a href="javascript:">
+                          <i class="fa fa-star f-18 star-green"></i>
+                        </a>
+                        <a href="javascript:">
+                          <i class="fa fa-star f-18 star-green"></i>
+                        </a>
+                        <a href="javascript:">
+                          <i class="fa fa-star f-18 star-green"></i>
+                        </a>
+                        <a href="javascript:">
+                          <i class="fa fa-star f-18 star-green"></i>
+                        </a>
+                        (8 avis)</div>
+
+                    </div>
+                  </div>
+                  <div class=" col-4">
+                    <div class="inbox-box-center">
+                      <!-- <div class="">Soirée Rooftop</div> -->
+                    </div>
+                  </div>
+                  <div class="inbox-box-status col-2">
+                    <div class="profile-reference-date" style="color: #929dad;">hier </div>
+
+                  </div>
+                
+                <div class="row " style="position:relative;">
+                  <div class="profile-reference-confirmed">
+                    <div class="inbox-box-status-title inbox-box-status-grey"> Événement confirmé et inviterait Youssef de nouveau </div>
+                  </div>
+
+
+                </div>
+                <div class="row" style="position:relative;">
+                  <div class="profile-reference-content">
+                    <div class="profile-reference-writter">
+                      Youssef est un super DJ et anime parfaitement la soirée, merci Youssef, c'était sympa de te voir et j'espére que tu réussira
+                      dans ta platforme et que tu deviennes le future de l'événementiel
+                    </div>
+                  </div>
+                
+
+              </div>
+              </div>
+              </div>
+            </div>
+              
+
+            <div class="col-9 col-box-boost  ">
+                <div class="profile-info" style="color: #444444;
+              padding: 15px; font-size:25px; ">
+              <!-- <div  class="inbox-box" > -->
+              <div class="row" style="position: relative;">
+                <div class="col-2">
+                  <div class="inbox-box-avatar">
+                    <img src="{{theUser.get('avatar')._url}}" height="98" width="98" />
+                    <!-- <img src="{{conversation.TIuserB.avatar}}" height="98" width="98" /> -->
+                  </div>
+                </div>
+
+                <div class=" col-3">
+                  <div class="inbox-box-center">
+                    <div class="profile-reference-writter">youssef Kriouile</div>
+                    <div class="inbox-box-place profile-reference-writter" style="box-sizing: border-box; display: block;
+                               
+                                font-size: 0.8225em;
+                                position: relative; 
+                                word-wrap: break-word;">Paris, France</div>
+                    <div class="profile-box-desc" style="    color: #929dad; font-size: 0.8125em;  ">
+                      <a href="javascript:">
+                        <i class="fa fa-star f-18 star-green "></i>
+                      </a>
+                      <a href="javascript:">
+                        <i class="fa fa-star f-18 star-green"></i>
+                      </a>
+                      <a href="javascript:">
+                        <i class="fa fa-star f-18 star-green"></i>
+                      </a>
+                      <a href="javascript:">
+                        <i class="fa fa-star f-18 star-green"></i>
+                      </a>
+                      <a href="javascript:">
+                        <i class="fa fa-star f-18 star-green"></i>
+                      </a>
+                      (8 avis)</div>
+
+                  </div>
+                </div>
+                <div class=" col-4">
+                  <div class="inbox-box-center">
+                    <!-- <div class="">Soirée Rooftop</div> -->
+                  </div>
+                </div>
+                <div class="inbox-box-status col-2">
+                  <div class="profile-reference-date" style="color: #929dad;">hier </div>
+
+                </div>
+              
+              <div class="row " style="position:relative;">
+                <div class="profile-reference-confirmed">
+                  <div class="inbox-box-status-title inbox-box-status-grey"> Événement confirmé et inviterait Youssef de nouveau </div>
+                </div>
+
+
+              </div>
+              <div class="row" style="position:relative;">
+                <div class="profile-reference-content">
+                  <div class="profile-reference-writter">
+                    Youssef est un super DJ et anime parfaitement la soirée, merci Youssef, c'était sympa de te voir et j'espére que tu réussira
+                    dans ta platforme et que tu deviennes le future de l'événementiel
+                  </div>
+                </div>
+              
+
+            </div>
+            </div>
+            </div>
+          </div>
+
+          <div class="col-9 col-box-boost  ">
+              <div class="profile-info" style="color: #444444;
+            padding: 15px; font-size:25px; ">
+            <!-- <div  class="inbox-box" > -->
+            <div class="row" style="position: relative;">
+              <div class="col-2">
+                <div class="inbox-box-avatar">
+                  <img src="{{theUser.get('avatar')._url}}" height="98" width="98" />
+                  <!-- <img src="{{conversation.TIuserB.avatar}}" height="98" width="98" /> -->
+                </div>
+              </div>
+
+              <div class=" col-3">
+                <div class="inbox-box-center">
+                  <div class="profile-reference-writter">youssef Kriouile</div>
+                  <div class="inbox-box-place profile-reference-writter" style="box-sizing: border-box; display: block;
+                             
+                              font-size: 0.8225em;
+                              position: relative; 
+                              word-wrap: break-word;">Paris, France</div>
+                  <div class="profile-box-desc" style="    color: #929dad; font-size: 0.8125em;  ">
+                    <a href="javascript:">
+                      <i class="fa fa-star f-18 star-green "></i>
+                    </a>
+                    <a href="javascript:">
+                      <i class="fa fa-star f-18 star-green"></i>
+                    </a>
+                    <a href="javascript:">
+                      <i class="fa fa-star f-18 star-green"></i>
+                    </a>
+                    <a href="javascript:">
+                      <i class="fa fa-star f-18 star-green"></i>
+                    </a>
+                    <a href="javascript:">
+                      <i class="fa fa-star f-18 star-green"></i>
+                    </a>
+                    (8 avis)</div>
+
+                </div>
+              </div>
+              <div class=" col-4">
+                <div class="inbox-box-center">
+                  <!-- <div class="">Soirée Rooftop</div> -->
+                </div>
+              </div>
+              <div class="inbox-box-status col-2">
+                <div class="profile-reference-date" style="color: #929dad;">hier </div>
+
+              </div>
+            
+            <div class="row " style="position:relative;">
+              <div class="profile-reference-confirmed">
+                <div class="inbox-box-status-title inbox-box-status-grey"> Événement confirmé et inviterait Youssef de nouveau </div>
+              </div>
+
+
+            </div>
+            <div class="row" style="position:relative;">
+              <div class="profile-reference-content">
+                <div class="profile-reference-writter">
+                  Youssef est un super DJ et anime parfaitement la soirée, merci Youssef, c'était sympa de te voir et j'espére que tu réussira
+                  dans ta platforme et que tu deviennes le future de l'événementiel
+                </div>
+              </div>
+            
+
+          </div>
+          </div>
+          </div>
+        </div>
+              
+              <div *ngIf="actualRoute==='photos' || actualRoute===''">
+                <div class="m-t-40">
+                  <div style=" margin-left: 20%; margin-right: auto; width: 90%;">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/1ozGKlOzEVc" frameborder="0" allowfullscreen></iframe>
                   </div>
                 </div>
               </div>
+
+
+
+
             </div>
-            <div class="row">
-                <div class="col-xl-12 col-box-boost ">
-                <div class="profile-info ">
-                  <div class="profile-info-title">Recent Events</div>
+
+          </div>
+        </div>
+
+        <a href="javascript:">
+          <i class="fa fa-star f-18 "></i>
+        </a>
+        <i class="far fa-star"></i>
+
+
+
+
+        <div class="row m-t-40">
+          <div class="col-8">
+
+            <div class="conversation-warning">
+              <div class="heavy box-header" style="margin-left: 2%;">
+                Présentation
+              </div>
+              <div class=" multicolumn">
+                <ul class="multicolumn-column mod1-2">
+                  <li style="margin-left: 3%; margin-top : 2%;">
+                    2 avis positifs
+                  </li>
+                  <li style="margin-left: 3%; margin-top : 3%;">
+                    pays : France, Paris
+                  </li>
+                  <li style="margin-left: 3%; margin-top : 3%;">
+                    Talent : DJ + Guitariste
+                  </li>
+                  <li style="margin-left: 3%; margin-left:3%; margin-top : 2%;">
+                    Membre depuis Octobre 2019
+                  </li>
+                </ul>
+
+                <!-- <div class="box-content">
+                      2 avis positifs
+                    </div> -->
+              </div>
+            </div>
+
+            <div class="col-xl-12 col-box-boost m-b-20">
+              dfv
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xl-12 col-box-boost ">
+            <div class="profile-info ">
+              <div class="profile-info-title">Mes événements</div>
 
             </div>
 

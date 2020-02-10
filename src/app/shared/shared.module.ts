@@ -22,6 +22,7 @@ import { LinkTriggerDirective } from "../layout/admin/admin.component";
 import { EventBoxComponent } from "../component/event-box/event-box.component";
 import { QuickEventBoxComponent } from "../component/quick-event-box/quick-event-box.component";
 import { ProfileBoxComponent } from "../component/profile-box/profile-box.component";
+import { TimeAgoPipe } from "time-ago-pipe";
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -53,7 +54,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     ClickOutsideModule,
     EventBoxComponent,
     QuickEventBoxComponent,
-    ProfileBoxComponent
+    ProfileBoxComponent,
+    TimeAgoPipe
   ],
   declarations: [
     ToggleFullScreenDirective,
@@ -69,7 +71,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     SpinnerComponent,
     EventBoxComponent,
     QuickEventBoxComponent,
-    ProfileBoxComponent
+    ProfileBoxComponent,
+    TimeAgoPipe
   ],
   providers: [
     {

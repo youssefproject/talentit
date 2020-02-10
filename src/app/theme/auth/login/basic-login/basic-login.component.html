@@ -3,7 +3,7 @@
     <div class="login-center-vertically">
       <h1 class="login-title padding text-center"> log in </h1>
       <div class="m-b-20 login-desc">Need a boostevent account?
-        <a href="" class="login-link">
+        <a [routerLink]="['/auth/choicereg']"  class="login-link">
           Create an account
         </a>
 
@@ -39,8 +39,8 @@
           <button type="submit" class="btn btn-primary login-button">Se connecter</button>
         </div>
 
-        <a [routerLink]="['/auth/forgot']" class="f-w-600 login-link ">
-          Forgot Username
+        <a [routerLink]="['/auth/choicereg']" class="f-w-600 login-link ">
+          Inscription
         </a>
         <a [routerLink]="['/auth/forgot']" class="f-w-600 login-link float-right ">
           Forgot Password

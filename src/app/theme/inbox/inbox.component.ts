@@ -68,11 +68,16 @@ export class InboxComponent implements OnInit {
           //conversation.TIuserB.name = conversation.userB.attributes.firstName;
           //conversation.TIuserB.avatar = conversation.userB.attributes.avatar;
         } else {
+          console.log(conversation)
           console.log(conversation.TIuserB)
-          conversation.TIuserB = conversation.TIuserB.attributes;
+          //conversation.T1userB.avatar=conversation.userB.attributes.avatar;
+
+          //conversation.TIuserB = conversation.TIuserB.attributes;
         }
         if (conversation.status == 0) {
           conversation.status = "En attente";
+        }else if(conversation.status == 1){
+          conversation.status = "accepté";
         }
         this.conversations.push(conversation);
       });

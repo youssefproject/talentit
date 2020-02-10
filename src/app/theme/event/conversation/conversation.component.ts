@@ -40,6 +40,7 @@ export class ConversationComponent implements OnInit {
           message.conversationId = message.conversation.id;
           this.conversationId = message.conversationId;
           message.conversation = message.conversation.attributes;
+          console.log(message);
           /* console.log("conversation.event ", conversation.eventId);
           conversation.TIuserB = conversation.TIuserB.attributes;
           if (conversation.status == 0) {

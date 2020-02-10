@@ -18,6 +18,8 @@ export class ProfileComponent implements OnInit {
   isGuest: boolean = false;
   scrollHandlerBind = this.scrollHandler.bind(this);
   messages = [];
+  router: Router;
+  actualRoute: string = "";
   newMessage: string;
   userB: string;
   conversationId: string;
@@ -27,6 +29,11 @@ export class ProfileComponent implements OnInit {
     private activatedRoute: ActivatedRoute
   ) {
     console.log("isGuest ", this.isGuest);
+    this.router = _router;
+    var tab = this.router.url.split("/");
+    console.log(tab, tab.length);
+    if (tab.length == 3) this.actualRoute = tab[2];
+
     let idE = this.activatedRoute.snapshot.params.idE;
 
     this.theUser = Parse.User.current();

@@ -58,11 +58,12 @@
                   <div class="row">
                     <div class="col-2">
                       <div *ngIf="isUserGuest()" class="inbox-box-avatar">
-                        <img src="{{conversation.userB.attributes.avatar._url}}" height="98" width="98" />
+                        <img src="{{conversation.userA.attributes.avatar._url}}" height="98" width="98" />
                         <!-- <img src="{{conversation.TIuserB.avatar}}" height="98" width="98" /> -->
                       </div>
                       <div *ngIf="!isUserGuest()" class="inbox-box-avatar">
-                        <img src="{{conversation.TIuserB.avatar._url}}" height="98" width="98" />
+                        <!-- <img src="{{conversation.TIuserB.avatar._url}}" height="98" width="98" /> -->
+                        <img src="{{conversation.userB.attributes.avatar._url}}" height="98" width="98" />
                         <!-- <img src="{{conversation.TIuserB.avatar}}" height="98" width="98" /> -->
                       </div>
                     </div>
@@ -73,7 +74,7 @@
                         <div class="inbox-box-desc">{{conversation.createdAt | timeAgo}}</div>
                       </div>
                       <div *ngIf="!isUserGuest()" class="inbox-box-center">
-                        <div class="inbox-box-title">{{conversation.TIuserB.name}}</div>
+                        <div class="inbox-box-title">{{conversation.userB.attributes.name}}</div>
                         <div class="inbox-box-desc">{{conversation.createdAt | timeAgo}}</div>
                       </div>
                     </div>

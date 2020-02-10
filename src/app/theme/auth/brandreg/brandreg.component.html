@@ -212,6 +212,30 @@
                       </div>
                     </div>
                   </div>
+                  <div class="row d-flex justify-content-center brandreg-row-padding padding">
+
+                    <div class="col-sm-8 col-md-8 col-lg-4 col-xl-4 justify-content-center ">
+                      <div class="form-group">
+                        <input class="form-control brandreg-input" placeholder="Adresse mail" name="Email" [(ngModel)]="this.email" required>
+
+
+
+
+                      </div>
+
+
+                    </div>
+
+                    <div class="col-sm-8 col-md-8 col-lg-4 col-xl-4 justify-content-center ">
+                      <div class="form-group">
+                        <input type="password" class="form-control brandreg-input" placeholder="Mot de passe" name="Password" [(ngModel)]="this.password"
+                          required>
+
+
+
+                      </div>
+                    </div>
+                  </div>
                   <div class="row d-flex justify-content-center brandreg-row-paddig">
 
 
@@ -250,6 +274,31 @@
                       </div>
                     </div>
                   </div>
+                  <div class="row d-flex justify-content-center brandreg-row-padding padding">
+
+                    <div class="col-sm-8 col-md-8 col-lg-4 col-xl-4 justify-content-center ">
+                      <div class="form-group">
+                        <input class="form-control brandreg-input" placeholder="Adresse mail" name="Email" [(ngModel)]="this.email" required>
+
+
+
+
+                      </div>
+
+
+                    </div>
+
+                    <div class="col-sm-8 col-md-8 col-lg-4 col-xl-4 justify-content-center ">
+                      <div class="form-group">
+                        <input type="password" class="form-control brandreg-input" placeholder="Mot de passe" name="Password" [(ngModel)]="this.password"
+                          required>
+
+
+
+                      </div>
+                    </div>
+                  </div>
+
                   <div class="row d-flex justify-content-center brandreg-row-paddig">
 
                     <div class="col-sm-8 col-md-8 col-lg-4 col-xl-4 justify-content-center ">
@@ -296,7 +345,7 @@
 
 
               </div>
-              <div *ngIf="i==4">
+              <div *ngIf="i==4 && (actualRoute==='brand' && type!==0 && type!==2)">
 
                 <div class="row d-flex justify-content-center">
 
@@ -307,7 +356,7 @@
 
                   </div>
                 </div>
-                <div *ngIf="actualRoute==='brand'">
+                <div *ngIf="actualRoute==='brand' ">
                   <div class="row d-flex justify-content-center">
 
                     <div class=" p-t-30 text-center">
@@ -319,7 +368,7 @@
                   </div>
 
 
-                  <div class="row d-flex justify-content-center brandreg-row-padding padding">
+                  <div   class="row d-flex justify-content-center brandreg-row-padding padding">
 
                     <div class="col-sm-8 col-md-8 col-lg-4 col-xl-4 justify-content-center ">
                       <div class="form-group">

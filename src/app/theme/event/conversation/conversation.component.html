@@ -43,7 +43,7 @@
                 <div *ngFor="let message of messages">
 
 
-                  <div *ngIf="message.me == 1 && message.type == 0 ">
+                  <div *ngIf="message.me == 1  ">
                     <div class="row m-t-30">
                       <div class="conversation-message-avatar col-2">
                         <div class="conversation-box-avatar avatar-grey">
@@ -54,7 +54,7 @@
                         <div class="conversation-box-message">
                           {{message.message}}
                         </div>
-                        <div class="conversation-date">il y a 1 heure</div>
+                        <div class="conversation-date">{{message.createdAt | timeAgo}}</div>
                       </div>
 
 
@@ -64,7 +64,7 @@
 
                     </div>
                   </div>
-                  <div *ngIf="message.me == 0 && message.type == 0">
+                  <div *ngIf="message.me == 0 && (message.type == 0 || message.type == 1)">
                     <div class="row m-t-30">
                       <div class="conversation-message-avatar col-2"></div>
                       <div class="col-8">
@@ -73,7 +73,7 @@
 
                         </div>
                         <div class="conversation-date right">
-                          <img src="assets/images/flag@3x.png" width="10" /> il y a 30 secondes</div>
+                          <img src="assets/images/flag@3x.png" width="10" /> {{message.updatedAt | timeAgo }}</div>
                       </div>
 
                       <div class="conversation-message-avatar col-2">
