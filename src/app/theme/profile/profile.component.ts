@@ -14,62 +14,26 @@ declare var jQuery: any;
 export class ProfileComponent implements OnInit {
 
   theUser: Parse.User;
-  eventId: string;
   isGuest: boolean = false;
   scrollHandlerBind = this.scrollHandler.bind(this);
-  messages = [];
   router: Router;
   actualRoute: string = "";
-  newMessage: string;
   userB: string;
-  conversationId: string;
+  idProfile:string = ""
   constructor(
     private parseService: ParseService,
     private _router: Router,
     private activatedRoute: ActivatedRoute
   ) {
-    console.log("isGuest ", this.isGuest);
     this.router = _router;
     var tab = this.router.url.split("/");
     console.log(tab, tab.length);
     if (tab.length == 3) this.actualRoute = tab[2];
-
-    let idE = this.activatedRoute.snapshot.params.idE;
-
+    console.log(this.activatedRoute);
+    if (this.activatedRoute.snapshot.params.idE != undefined) {
+      this.idProfile = this.activatedRoute.snapshot.params.idE;
+    }
     this.theUser = Parse.User.current();
-
-    this.parseService.getMessages(idE).then(result => {
-      if (result && result.length > 0) {
-        result.forEach(message => {
-          let idMessage = message.id;
-          message = Object.assign({ selected: false }, message.attributes);
-          message.id = idMessage;
-          message.conversationId = message.conversation.id;
-          this.conversationId = message.conversationId;
-          message.conversation = message.conversation.attributes;
-          /* console.log("conversation.event ", conversation.eventId);
-          conversation.TIuserB = conversation.TIuserB.attributes;
-          if (conversation.status == 0) {
-            conversation.status = "En attente";
-          } */
-          message.userAid = message.userA.id;
-          message.userA = message.userA.attributes;
-
-          message.userBid = message.userB.id;
-          message.userB = message.userB.attributes;
-          console.log("result ", message.userB);
-          if (message.userAid == Parse.User.current().id) {
-            message.me = 0;
-          } else {
-            message.me = 1;
-            this.userB = message.userAid;
-          }
-          this.messages.push(message);
-        });
-      } else {
-        //_router.navigate(["inbox"]);
-      }
-    });
   }
 
   changeColor(activate: boolean) {
@@ -114,9 +78,10 @@ export class ProfileComponent implements OnInit {
     }
   }
   ngAfterViewInit() {
+    
     $(".conversation-see-profile").css({
       top: $(window).height() * 0.65 - 150,
-      left: $(".conversation-box-booking").offset().left
+      //left: $(".conversation-box-booking").offset().left
     });
   }
   ngOnInit() {
@@ -130,7 +95,7 @@ export class ProfileComponent implements OnInit {
     }); */
 
     window.addEventListener("scroll", this.scrollHandlerBind);
-    //if (Parse.User.current().get("isGuest")) this.isGuest = true;
+    if (Parse.User.current().get("isGuest")) this.isGuest = true;
   }
 
   ngOnDestroy() {
@@ -138,29 +103,6 @@ export class ProfileComponent implements OnInit {
     //this.inConversationView = false;
     this.changeColor(false);
   }
-  test() {
-    if (this.newMessage == "" || this.newMessage == undefined) return;
-    var message = {
-      me: 0,
-      message: this.newMessage,
-      type: 0
-    };
-    this.messages.push(message);
-    Parse.Cloud.run("newMessage", {
-      userB: this.userB,
-      conversationId: this.conversationId,
-      message: this.newMessage
-    }).then(
-      function(result) {
-        // make sure the set the email sent flag on the object
-        //console.log("result :" + JSON.stringify(result));
-      },
-      function(error) {
-        // error
-        alert("Message non envoyé " + error);
-      }
-    );
-    this.newMessage = "";
-  }
+  
 
 }

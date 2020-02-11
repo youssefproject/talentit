@@ -5,6 +5,8 @@ import { Event } from "../models/event.model";
 import { Parse } from "parse";
 import { ParseFunctionService } from "./parsefunction.service";
 import { environment } from "../../environments/environment";
+import { User } from "../models/user.model";
+import { UserProfile } from "../models/userProfile.model";
 
 @Injectable()
 export class ParseService {
@@ -398,6 +400,24 @@ export class ParseService {
     } else {
       return Promise.resolve(this.theUser);
     }
+  }
+
+  public getProfileUser(_id: string): Promise<any> {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        const user = Parse.Object.extend("User");
+        let query = new Parse.Query(UserProfile);
+        query.equalTo("objectId", _id);
+        query.first({
+          success: function(theProfile: Parse.Object) {
+            resolve(theProfile);
+          },
+          error: function(error) {
+            reject(error);
+          }
+        });
+      }, 500);
+    });
   }
   //-----------------------------------------------------------------------------------
   //-----------------------------------END USERS---------------------------------------

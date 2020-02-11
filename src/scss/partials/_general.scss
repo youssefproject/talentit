@@ -5274,6 +5274,10 @@ a[data-toggle="lightbox"] .img-fluid {
     height: 270px;
     cursor: pointer;
 }
+.profile-profile-guest{
+    width:100%;
+    height: 170px;
+}
 
 .profile-box-img img {
     width: 100%;
@@ -5285,6 +5289,15 @@ a[data-toggle="lightbox"] .img-fluid {
     padding: 25px;
     font-size: 22px;
     cursor: pointer;
+}
+.profile-card-name {
+     /* padding-right: 15px; */
+     font-size: 22px;
+     font-family: "AvenirNext Demi";
+     /* padding-left: 36px; */
+     /* padding-bottom: 15px; */
+     padding-top: 2px;
+     text-align: center;
 }
 
 .profile-box-component-title {
@@ -5671,6 +5684,35 @@ body:not(.guys-phone) .guys-frame-home-artistfollow li:hover {
     margin-right: 25px
 }
 
+.profile-card-reserver{
+           /* margin-top: 30px; */
+    /* width: 70%; */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px;
+    color: white;
+    font-size: 16px;
+    background: linear-gradient(135deg, #FF02B0, #676CE2);
+    text-align: center;
+    border-radius: 8px;
+    border: solid 2px;
+}
+
+.profile-card-decliner{
+        /* margin-top: 15px; */
+        //margin-bottom: 20px;
+        /* width: 70%; */
+        margin-left: auto;
+        margin-right: auto;
+        padding: 15px;
+        color: #A19F9F;
+        font-size: 16px;
+        background: white;
+        text-align: center;
+        border-radius: 8px;
+        border: solid 2px #DBDBDB;
+}
+
 .profile-reference-date{
     font-family: "AvenirNext Demi";
     padding-top: 17px;
@@ -5871,7 +5913,7 @@ body:not(.guys-phone) .guys-frame-home-artistfollow li:hover {
     font-family: "AvenirNext Medium";
     font-size: 18px;
     color: #E911B7;
-    width: 90%;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
     background: #FFBAED;

@@ -38,7 +38,9 @@ export class InboxComponent implements OnInit {
     this.parseService.getConversations(this.idE).then(result => {
       let theResults: Promise<any> = result;
       if (result.length == 0) {
+        console.log(this.idE);
         this.parseService.getEvent(this.idE).then(result => {
+          console.log(result);
           this.theEvent = result.attributes;
         });
       }

@@ -98,6 +98,11 @@ const routes: Routes = [
         loadChildren: "./theme/profile/profile.module#ProfileModule",
         canActivate: [AuthGuard, ActivateGuard]
       },
+      {
+        path: "profile/:idProfile",
+        loadChildren: "./theme/profile/profile.module#ProfileModule",
+        canActivate: [AuthGuard, ActivateGuard]
+      },
 
       {
         path: "profile/edit",
