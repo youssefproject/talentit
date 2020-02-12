@@ -22,6 +22,7 @@ export class ProfileComponent implements OnInit {
   idProfile: string = "";
   userProfile: any;
   loading: boolean = false;
+  ownProfile: boolean = false;
   constructor(
     private parseService: ParseService,
     private _router: Router,
@@ -38,6 +39,11 @@ export class ProfileComponent implements OnInit {
       this.parseService.getProfileUser(this.idProfile).then(profile => {
         this.theUser = profile;
         if (this.theUser.get("isGuest")) this.isGuest = true;
+        console.log(this.ownProfile);
+        if (Parse.User.current().id == this.theUser.id) {
+          this.ownProfile = true;
+          console.log(this.ownProfile); 
+        }
         this.loading = true;
       });
     }

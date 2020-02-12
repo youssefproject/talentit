@@ -7,12 +7,13 @@ import {CalendarModule} from 'angular-calendar';
 import {MwlUtilsCalendarHeaderComponent} from './mwl-utils-calendar-header/mwl-utils-calendar-header.component';
 import {TagInputModule} from 'ngx-chips';
 import {FormsModule} from '@angular/forms';
+import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import {DragAndDropModule} from 'angular-draggable-droppable';
 
 @NgModule({
   imports: [
     CommonModule,
-   
+    NgbModalModule,
     SharedModule,
     CalendarModule.forRoot(),
     TagInputModule,
