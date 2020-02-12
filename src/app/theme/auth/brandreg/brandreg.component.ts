@@ -136,7 +136,7 @@ export class BrandregComponent implements OnInit {
   }
   info(brandregForm: NgForm) {
     if (this.name == "" || this.lastname == "" || this.email == "" || this.password =="") {
-      this.messageError = "Ces champs ne peuvent pas étre vide";
+      this.messageError = "Ces champs ne peuvent pas être vide";
       return;
     }
 
@@ -160,10 +160,9 @@ export class BrandregComponent implements OnInit {
 
     if (this.type == 3 || this.type == 4) {
       //console.log("3iw");
-      this.messageError = "Ces champs ne peuvent pas étre vide";
+      this.messageError = "Ces champs ne peuvent pas être vide";
       return;
     }
-    console.log("avant de passer");
     
 
     this.messageError = "";
@@ -183,7 +182,7 @@ export class BrandregComponent implements OnInit {
   }
   terminer(brandregForm: NgForm) {
     if (this.tel == "") {
-      this.messageError = "Ces champs ne peuvent pas étre vide";
+      this.messageError = "Ces champs ne peuvent pas être vide";
       return;
     }
     this.messageError = "";

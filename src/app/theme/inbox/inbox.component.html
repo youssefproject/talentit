@@ -36,19 +36,19 @@
               <div class="col-3 inbox-menu">
                 <ul>
                   <li [ngClass]="{selected: actualRoute=='inbox' || actualRoute==''}" [routerLink]="['/inbox/',idE]">
-                    Inbox
+                    Messagerie
                   </li>
                   <li [ngClass]="{selected: actualRoute=='quote-requests'}" [routerLink]="['/quote-requests/',idE]">
-                    Quote requests
+                    Évènements en attente
                   </li>
                   <li [ngClass]="{selected: actualRoute=='booked-events'}" [routerLink]="['/booked-events/',idE]">
-                    Booked Events
+                    Évènements validés
                   </li>
-                  <li [ngClass]="{selected: actualRoute=='review'}" [routerLink]="['/review/',idE]">
+                  <!-- <li [ngClass]="{selected: actualRoute=='review'}" [routerLink]="['/review/',idE]">
                     Review
-                  </li>
+                  </li> -->
                   <li [ngClass]="{selected: actualRoute=='archived'}" [routerLink]="['/archived/',idE]">
-                    Archived
+                    Évènements archivés
                   </li>
                 </ul>
               </div>
