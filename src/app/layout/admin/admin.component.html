@@ -28,8 +28,8 @@
             <li>
               <a href="javascript:" [routerLink]="['/inbox/']">Messagerie</a>
             </li>
-            <li>
-              <a href="javascript:" [routerLink]="['/profile']">Profil</a>
+            <li *ngIf="loading">
+              <a href="javascript:" [routerLink]="['/profile', theUser.id]">Profil</a>
             </li>
             <app-notifications></app-notifications>
 

@@ -33,11 +33,11 @@
             <div class="row ">
               <div class="col-xl-3 ">
                 <div class="col-xl-12 col-box-boost ">
-                  <div [routerLink]="[ '/profile']"  class="profile-box-img ">
+                  <div [routerLink]="[ '/profile', theUser.id]"  class="profile-box-img ">
                     <img src="{{theUser.get( 'avatar')._url}} " />
                     <!-- <img src="{{theUser.get( 'avatar')}} " /> -->
                   </div>
-                  <div class="profile-box-title " [routerLink]="[ '/profile']"  >{{theUser.get('firstName')}} {{theUser.get('lastName')}} </div>
+                  <div class="profile-box-title " [routerLink]="[ '/profile',theUser.id]"  >{{theUser.get('firstName')}} {{theUser.get('lastName')}} </div>
                   <div class="profile-box-button " [routerLink]="[ '/profile/edit/general'] ">Modifier mon profil</div>
                 </div>
                 <div *ngIf="isGuest" class="col-xl-12 col-box-boost m-t-20 ">

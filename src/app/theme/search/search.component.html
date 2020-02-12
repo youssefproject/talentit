@@ -30,7 +30,7 @@
                       </select>
                     </div>
                     <div class="search-select-box col-lg-3">
-                      <select name="select" class="search-select form-control" id="region" name="region">
+                      <select  class="search-select form-control" id="region" name="region">
                         <option value="opt1">Dans ma région</option>
                         <option value="opt2">Auvergne-Rhône-Alpes</option>
                         <option value="opt3">Bourgogne-Franche-Comté</option>
@@ -49,14 +49,14 @@
                     </div>
                     <div class="search-select-box col-lg-2 form-group">
 
-                      <input class="form-control search-select" placeholder="Disponible" [(ngModel)]="this.dispo" type="text" onfocus="(this.type='date')">
+                      <input class="form-control search-select" placeholder="Disponible" [ngModelOptions]="{standalone: true}"  [(ngModel)]="this.dispo" type="text" onfocus="(this.type='date')"   > 
 
 
 
                     </div>
                     <div class="search-select-box col-lg-2">
                       <div>
-                        <input class="form-control search-select" placeholder="Tous les prix" [(ngModel)]="this.prixmax" type="number" min="0" max="8000">
+                        <input class="form-control search-select" placeholder="Tous les prix" name="prix" [(ngModel)]="this.prixmax" type="number" min="0" max="8000">
                       </div>
 
                       <div class="search-select-red">{{messageError}}</div>

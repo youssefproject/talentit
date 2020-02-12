@@ -94,6 +94,7 @@ export class SearchNewComponent implements OnInit, AfterViewInit {
   ngOnInit() {
     this.gender = 0;
     this.show = false;
+    this.dispo= new Date().toString();
     //let prixmax=8000;
     console.log(isNumber(this.prixmax));
     this.route.queryParams.subscribe(params => {

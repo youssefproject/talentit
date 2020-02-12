@@ -15,6 +15,7 @@ export class InboxComponent implements OnInit {
   idE: string = "";
   actualRoute: string = "";
   theEvent: any;
+  loading:boolean=false;
   constructor(
     private parseService: ParseService,
     private _router: Router,
@@ -70,6 +71,7 @@ export class InboxComponent implements OnInit {
           //conversation.TIuserB.name = conversation.userB.attributes.firstName;
           //conversation.TIuserB.avatar = conversation.userB.attributes.avatar;
         } else {
+          conversation.TIuserB=conversation.userB.attributes;
           console.log(conversation)
           console.log(conversation.TIuserB)
           //conversation.T1userB.avatar=conversation.userB.attributes.avatar;
@@ -90,6 +92,7 @@ export class InboxComponent implements OnInit {
         this.events.push(theEvent);
         //this.eventObservable.push(theEvent);
       } */
+      this.loading=true;
     });
   }
 

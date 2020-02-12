@@ -144,6 +144,7 @@ export class AdminComponent implements OnInit {
   public config: any;
   usernameUser: string = "";
   theUser: Parse.User;
+  loading:boolean=false;
   constructor(public menuItems: MenuItems, private parseService: ParseService) {
     this.navType = "st2";
     this.themeLayout = "horizontal"; // vertical
@@ -207,6 +208,7 @@ export class AdminComponent implements OnInit {
           .charAt(0)
           .toUpperCase() +
         ".";
+        this.loading=true;
     });
 
     this.setBackgroundPattern("pattern1");

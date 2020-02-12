@@ -19,7 +19,7 @@
 
 
 
-<div class="line-fullscreen">
+<div  class="line-fullscreen">
   <div class="conversation-full">
     <img src="assets/images/youssefcover.jpg" alt="">
     <div class="conversation-full-overlay">
@@ -29,7 +29,7 @@
 
 
   </div>
-  <div class="pcoded-wrapper">
+  <div *ngIf="loading" class="pcoded-wrapper">
     <div class="pcoded-content">
       <div class="pcoded-inner-content">
         <!-- Main-body start -->
@@ -44,7 +44,7 @@
               </div>
             </div>
             <div class="row active-scroll-wchange-color">
-              <div *ngIf="isGuest padding" class="col-xl-4 ">
+              <div *ngIf="isGuest" class="col-xl-4 ">
                 <div class="col-xl-10 col-box-boost ">
                   <div class="container">
                     <div class="row">
@@ -142,24 +142,24 @@
                       <li style="    display: inline-block;
               margin: 10px 30px 10px 0;
               vertical-align: middle; box-sizing: border-box; text-align: -webkit-match-parent;" role="tab" [ngClass]="{selected: actualRoute=='about' || actualRoute==''}"
-                        [routerLink]="['/profile/about']">
+                        [routerLink]="['/profile',idProfile,'about']">
                         À propos
                       </li>
                       <li [ngClass]="{selected: actualRoute=='references'}" style="    display: inline-block;
               margin: 10px 30px 10px 0;
-              vertical-align: middle; box-sizing: border-box; text-align: -webkit-match-parent;" role="tab" [routerLink]="['/profile/references']">
+              vertical-align: middle; box-sizing: border-box; text-align: -webkit-match-parent;" role="tab" [routerLink]="['/profile',idProfile,'references']">
                         Avis
                       </li>
                       <li style="    display: inline-block;
               margin: 10px 30px 10px 0;
               vertical-align: middle; box-sizing: border-box; text-align: -webkit-match-parent;" role="tab" [ngClass]="{selected: actualRoute=='photos'}"
-                        [routerLink]="['/profile/photos']">
+                        [routerLink]="['/profile',idProfile,'photos']">
                         Photos et videos
                       </li>
                       <li style="    display: inline-block;
               margin: 10px 30px 10px 0;
               vertical-align: middle; box-sizing: border-box; text-align: -webkit-match-parent;" role="tab" [ngClass]="{selected: actualRoute=='availability'}"
-                        [routerLink]="['/profile/availability']">
+                        [routerLink]="['/profile',idProfile,'availability']">
                         Disponibilité
 
                       </li>
@@ -515,7 +515,7 @@
             <!-- <div class="main-body">
           <div class="page-wrapper"> -->
 
-              <!-- <div class="col-4 conversation-box-booking">
+            <!-- <div class="col-4 conversation-box-booking">
                 <div *ngIf="isGuest" class="conversation-box-book">
                   <div class="conversation-box-book-header">
                     <div class="conversation-box-book-header-from">
@@ -531,9 +531,10 @@
                   </div>
                 </div>
               </div> -->
-            
+
 
           </div>
+        </div>
       </div>
     </div>
   </div>

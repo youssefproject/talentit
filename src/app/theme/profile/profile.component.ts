@@ -19,7 +19,9 @@ export class ProfileComponent implements OnInit {
   router: Router;
   actualRoute: string = "";
   userB: string;
-  idProfile:string = ""
+  idProfile: string = "";
+  userProfile: any;
+  loading: boolean = false;
   constructor(
     private parseService: ParseService,
     private _router: Router,
@@ -28,12 +30,21 @@ export class ProfileComponent implements OnInit {
     this.router = _router;
     var tab = this.router.url.split("/");
     console.log(tab, tab.length);
-    if (tab.length == 3) this.actualRoute = tab[2];
-    console.log(this.activatedRoute);
-    if (this.activatedRoute.snapshot.params.idE != undefined) {
-      this.idProfile = this.activatedRoute.snapshot.params.idE;
+    if (tab.length == 4) this.actualRoute = tab[3];
+    console.log(tab.length);
+    if (this.activatedRoute.snapshot.params.idProfile != undefined) {
+      this.idProfile = this.activatedRoute.snapshot.params.idProfile;
+      console.log(this.idProfile)
+      this.parseService.getProfileUser(this.idProfile).then(profile => {
+        this.theUser = profile;
+        if (this.theUser.get("isGuest")) this.isGuest = true;
+        this.loading = true;
+      });
     }
-    this.theUser = Parse.User.current();
+
+
+    //this.theUser = Parse.User.current();
+    //console.log(this.theUser);
   }
 
   changeColor(activate: boolean) {
@@ -54,31 +65,35 @@ export class ProfileComponent implements OnInit {
   }
 
   scrollHandler() {
-    var marginTop = -129;
-    var alpha =
-      $(window).scrollTop() / ($(".pcoded-wrapper").offset().top - 90);
-    var alpha2 =
-      $(window).scrollTop() / ($(".pcoded-wrapper").offset().top - 140);
 
-    $(".conversation-box-booking").css("margin-top", marginTop * (1 - alpha));
-    $(".conversation-see-profile").css("opacity", 1 - alpha2);
-    $(".conversation-full-content").css("opacity", 1 - alpha2);
-    // console.log(
-    //   "alpha2 ",
-    //   $(window).scrollTop(),
-    //   " / ",
-    //   $(".pcoded-wrapper").offset().top - 90
-    // );
-    if ($(window).scrollTop() > $(".pcoded-wrapper").offset().top - 90) {
-      //$(".conversation-box-book").css("position", "fixed");
-      this.changeColor(false);
-    } else {
-      // $(".conversation-box-book").css("position", "inherit");
-      this.changeColor(true);
+    if (this.loading) {
+
+      var marginTop = -129;
+      var alpha =
+        $(window).scrollTop() / ($(".pcoded-wrapper").offset().top - 90);
+      var alpha2 =
+        $(window).scrollTop() / ($(".pcoded-wrapper").offset().top - 140);
+
+      $(".conversation-box-booking").css("margin-top", marginTop * (1 - alpha));
+      $(".conversation-see-profile").css("opacity", 1 - alpha2);
+      $(".conversation-full-content").css("opacity", 1 - alpha2);
+      // console.log(
+      //   "alpha2 ",
+      //   $(window).scrollTop(),
+      //   " / ",
+      //   $(".pcoded-wrapper").offset().top - 90
+      // );
+      if ($(window).scrollTop() > $(".pcoded-wrapper").offset().top - 90) {
+        //$(".conversation-box-book").css("position", "fixed");
+        this.changeColor(false);
+      } else {
+        // $(".conversation-box-book").css("position", "inherit");
+        this.changeColor(true);
+      }
     }
   }
   ngAfterViewInit() {
-    
+
     $(".conversation-see-profile").css({
       top: $(window).height() * 0.65 - 150,
       //left: $(".conversation-box-booking").offset().left
@@ -93,9 +108,9 @@ export class ProfileComponent implements OnInit {
       alert("jj")
       this.scrollHandler();
     }); */
-
     window.addEventListener("scroll", this.scrollHandlerBind);
-    if (Parse.User.current().get("isGuest")) this.isGuest = true;
+
+    // if (this.theUser.get("isGuest")) this.isGuest = true;
   }
 
   ngOnDestroy() {
@@ -103,6 +118,6 @@ export class ProfileComponent implements OnInit {
     //this.inConversationView = false;
     this.changeColor(false);
   }
-  
+
 
 }

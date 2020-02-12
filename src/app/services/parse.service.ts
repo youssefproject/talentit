@@ -403,20 +403,23 @@ export class ParseService {
   }
 
   public getProfileUser(_id: string): Promise<any> {
+    console.log(_id);
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         const user = Parse.Object.extend("User");
-        let query = new Parse.Query(UserProfile);
+        let query = new Parse.Query(user);
         query.equalTo("objectId", _id);
         query.first({
           success: function(theProfile: Parse.Object) {
+            console.log(theProfile);
             resolve(theProfile);
           },
           error: function(error) {
+            console.log(error);
             reject(error);
           }
         });
-      }, 500);
+      }, 100);
     });
   }
   //-----------------------------------------------------------------------------------
