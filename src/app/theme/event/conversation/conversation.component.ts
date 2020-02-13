@@ -57,6 +57,7 @@ export class ConversationComponent implements OnInit {
           } else {
             message.me = 1;
             this.userB = message.userAid;
+            console.log(this.userB);
           }
           this.messages.push(message);
         });

@@ -9,6 +9,11 @@ import {TagInputModule} from 'ngx-chips';
 import {FormsModule} from '@angular/forms';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import {DragAndDropModule} from 'angular-draggable-droppable';
+import { registerLocaleData } from '@angular/common';
+import localeFrCa from '@angular/common/locales/fr-CA';
+import localeFrCaExtra from '@angular/common/locales/extra/fr-CA';
+
+registerLocaleData(localeFrCa, localeFrCaExtra);
 
 @NgModule({
   imports: [

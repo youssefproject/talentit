@@ -1,4 +1,8 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
+
+registerLocaleData(localeFr);
 
 @Component({
   selector: 'app-mwl-utils-calendar-header',
@@ -12,7 +16,7 @@ export class MwlUtilsCalendarHeaderComponent {
 
   @Input() viewDate: Date;
 
-  @Input() locale = 'en';
+  @Input() locale = 'Fr';
 
   @Output() viewChange: EventEmitter<string> = new EventEmitter();
 

@@ -1,4 +1,4 @@
-<div class="line-fullscreen">
+<div *ngIf="loading" class="line-fullscreen">
 
 
   <div class="pcoded-wrapper">
@@ -52,7 +52,7 @@
                   </li>
                 </ul>
               </div>
-              <div *ngIf="loading" class="col-9">
+              <div  class="col-9">
 
                 <div  *ngFor="let conversation of conversations" class="inbox-box" [routerLink]="['/event/',conversation.id]">
                   <div class="row">

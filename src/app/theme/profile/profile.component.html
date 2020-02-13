@@ -19,9 +19,9 @@
 
 
 
-<div  class="line-fullscreen">
+<div *ngIf="loading" class="line-fullscreen">
   <div class="conversation-full">
-    <img src="assets/images/youssefcover.jpg" alt="">
+    <img src="{{theUser.get('cover')._url}}" alt="">
     <div class="conversation-full-overlay">
 
     </div>
@@ -29,7 +29,7 @@
 
 
   </div>
-  <div *ngIf="loading" class="pcoded-wrapper">
+  <div  class="pcoded-wrapper">
     <div class="pcoded-content">
       <div class="pcoded-inner-content">
         <!-- Main-body start -->
@@ -37,11 +37,11 @@
           <div class="page-wrapper">
 
 
-            <div *ngIf="!isGuest" class="inbox-box-avatar active-scroll-wchange-color">
-              <div class="profile-picture-screen">
-                <img src="{{theUser.get('avatar')._url}}" height="200" width="200" />
-                <!-- <img src="{{conversation.TIuserB.avatar}}" height="98" width="98" /> -->
-              </div>
+            <div *ngIf="!isGuest" class="profile-not-guest-box-avatar active-scroll-wchange-color">
+              <!-- <div class="profile-picture-screen"> -->
+              <img src="{{theUser.get('avatar')._url}}" height="200" width="200" />
+              <!-- <img src="{{conversation.TIuserB.avatar}}" height="98" width="98" /> -->
+              <!-- </div> -->
             </div>
             <div class="row active-scroll-wchange-color">
               <div *ngIf="isGuest" class="col-xl-4 ">
@@ -121,7 +121,7 @@
 
               <div class="col-xl-8">
                 <div class="row">
-                  <div class="conversation-warning">Youssef est encore disponible pour cette date.
+                  <div  *ngIf="isGuest" class="conversation-warning">Youssef est encore disponible pour cette date.
                     <span class="heavy">Réservez le dès maintenant!</span>
                   </div>
                   <nav style="    background-color: #fff;
@@ -160,7 +160,7 @@
                         [routerLink]="['/profile',idProfile,'photos']">
                         Photos et videos
                       </li>
-                      <li style="    display: inline-block;
+                      <li  *ngIf="isGuest" style="    display: inline-block;
               margin: 10px 30px 10px 0;
               vertical-align: middle; box-sizing: border-box; text-align: -webkit-match-parent;" role="tab" [ngClass]="{selected: actualRoute=='availability'}"
                         [routerLink]="['/profile',idProfile,'availability']">
@@ -187,20 +187,7 @@
                           </div>
 
                           <div class=" profile-description " style="color: #444444;
-                      padding: 15px; ">
-                            Bonjour et bienvenue sur mon profile Boostevent,
-                            <br/>
-                            <br/> Je m'apelle Youssef, 24 ans et je vis à Rabat, J'ai étudié au concervatoire international de
-                            Rabat au Maroc, ou je me suis spécialisé en Oud, c'est un joli instrument oriental qui sonne
-                            trés bien.
-                            <br/> Je vous propose donc une variété de musique, et vous promet une animation que vous allez jamais
-                            y regretter.
-                            <br/> Avec mon groupe compétant :
-                            <br/> Anass : Violoniste professionnel
-                            <br/> Mouad: Pianiste hors du commun
-                            <br/> Asmae: Une voie de faie, qui vous emmenerait à Jupiter
-                            <br/> Pour plus d'informations, n'hésitez pas à nous envoyer un message, nous serons ravi de vous
-                            faire passer un événement inoubliable
+                      padding: 15px; ">{{theUser.get('description')}}
                           </div>
                         </div>
                       </div>
@@ -211,7 +198,7 @@
                       <div class="profile-info" style="color: #444444;
                     padding: 15px; font-size:25px; ">
                         <!-- <div  class="inbox-box" > -->
-                        <div class="row" style="position: relative;">
+                        <div class="row" style="position: relative; padding:5px;">
                           <div class="col-2">
                             <div class="inbox-box-avatar">
                               <img src="{{theUser.get('avatar')._url}}" height="98" width="98" />
@@ -282,7 +269,7 @@
                       <div class="profile-info" style="color: #444444;
                   padding: 15px; font-size:25px; ">
                         <!-- <div  class="inbox-box" > -->
-                        <div class="row" style="position: relative;">
+                        <div class="row" style="position: relative; padding:5px;">
                           <div class="col-2">
                             <div class="inbox-box-avatar">
                               <img src="{{theUser.get('avatar')._url}}" height="98" width="98" />
@@ -354,7 +341,7 @@
                       <div class="profile-info" style="color: #444444;
                 padding: 15px; font-size:25px; ">
                         <!-- <div  class="inbox-box" > -->
-                        <div class="row" style="position: relative;">
+                        <div class="row" style="position: relative; padding:5px;">
                           <div class="col-2">
                             <div class="inbox-box-avatar">
                               <img src="{{theUser.get('avatar')._url}}" height="98" width="98" />
@@ -425,7 +412,7 @@
                       <div class="profile-info" style="color: #444444;
               padding: 15px; font-size:25px; ">
                         <!-- <div  class="inbox-box" > -->
-                        <div class="row" style="position: relative;">
+                        <div class="row" style="position: relative; padding:5px;">
                           <div class="col-2">
                             <div class="inbox-box-avatar">
                               <img src="{{theUser.get('avatar')._url}}" height="98" width="98" />

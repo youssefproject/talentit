@@ -75,28 +75,28 @@ export class AccountCalendarComponent implements OnInit {
 
   externalEvents: CalendarEvent[] = [
     {
-      title: 'My Event One',
+      title: 'Mon premier évènement',
       color: colors.yellow,
       start: new Date(),
       draggable: true,
       actions: this.actions
     },
     {
-      title: 'My Event Two',
+      title: 'Mon deuxième évènement',
       color: colors.blue,
       start: new Date(),
       draggable: true,
       actions: this.actions
     },
     {
-      title: 'My Event Three',
+      title: 'Soirée Rooftop',
       color: colors.blue,
       start: new Date(),
       draggable: true,
       actions: this.actions
     },
     {
-      title: 'My Event Four',
+      title: 'Soirée aniversaire',
       color: colors.blue,
       start: new Date(),
       draggable: true,
@@ -108,26 +108,26 @@ export class AccountCalendarComponent implements OnInit {
     {
       start: subDays(startOfDay(new Date()), 1),
       end: addDays(new Date(), 1),
-      title: 'A 3 day event',
+      title: 'Soirée Rooftop',
       color: colors.red,
       actions: this.actions
     },
     {
       start: startOfDay(new Date()),
-      title: 'An event with no end date',
+      title: 'Soirée piscine',
       color: colors.yellow,
       actions: this.actions
     },
     {
       start: subDays(endOfMonth(new Date()), 3),
       end: addDays(endOfMonth(new Date()), 3),
-      title: 'A long event that spans 2 months',
+      title: 'Anniversaire',
       color: colors.blue
     },
     {
       start: addHours(startOfDay(new Date()), 2),
       end: new Date(),
-      title: 'A draggable and resizable event',
+      title: 'Anniversaire',
       color: colors.green,
       actions: this.actions,
       resizable: {

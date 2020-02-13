@@ -15,7 +15,8 @@ export class InboxComponent implements OnInit {
   idE: string = "";
   actualRoute: string = "";
   theEvent: any;
-  loading:boolean=false;
+  //userBclone :any;
+  loading: boolean = false;
   constructor(
     private parseService: ParseService,
     private _router: Router,
@@ -39,10 +40,9 @@ export class InboxComponent implements OnInit {
     this.parseService.getConversations(this.idE).then(result => {
       let theResults: Promise<any> = result;
       if (result.length == 0) {
-        console.log(this.idE);
         this.parseService.getEvent(this.idE).then(result => {
-          console.log(result);
           this.theEvent = result.attributes;
+          this.loading=true;
         });
       }
 
@@ -62,28 +62,46 @@ export class InboxComponent implements OnInit {
         console.log("conversation.event ", conversation);
         console.log(Parse.User.current().get("isGuest"));
         if (Parse.User.current().get("isGuest")) {
-          conversation.TIuserB=null;
+          //conversation.TIuserB=null;
+          console.log(conversation.T1userB);
           //conversation.TIuserB.name=null;
           //conversation.TIuserB.avatar=null;
           console.log(conversation)
           console.log(conversation.userB);
           console.log(conversation.userB.attributes.firstName);
+
           //conversation.TIuserB.name = conversation.userB.attributes.firstName;
           //conversation.TIuserB.avatar = conversation.userB.attributes.avatar;
         } else {
-          conversation.TIuserB=conversation.userB.attributes;
+          let userBclone;
+          this.parseService.getProfileUser(conversation.userB.id).then(profile => {
+            console.log(profile);
+            userBclone = profile;
+            console.log(userBclone.attributes);
+            if (conversation.status == 0) {
+              conversation.status = "En attente";
+            } else if (conversation.status == 1) {
+              conversation.status = "accepté";
+            }
+            this.conversations.push(conversation);
+
+            this.loading = true;
+          });
+          console.log(conversation.userB);
           console.log(conversation)
           console.log(conversation.TIuserB)
           //conversation.T1userB.avatar=conversation.userB.attributes.avatar;
 
           //conversation.TIuserB = conversation.TIuserB.attributes;
         }
-        if (conversation.status == 0) {
-          conversation.status = "En attente";
-        }else if(conversation.status == 1){
-          conversation.status = "accepté";
+        if (Parse.User.current().get("isGuest")) {
+          if (conversation.status == 0) {
+            conversation.status = "En attente";
+          } else if (conversation.status == 1) {
+            conversation.status = "accepté";
+          }
+          this.conversations.push(conversation);
         }
-        this.conversations.push(conversation);
       });
       /* for (let i = 0; i < result.length; i++) {
         let object = result[i];
@@ -92,15 +110,17 @@ export class InboxComponent implements OnInit {
         this.events.push(theEvent);
         //this.eventObservable.push(theEvent);
       } */
-      this.loading=true;
+      if (Parse.User.current().get("isGuest")) {
+        this.loading = true;
+      }
     });
+
   }
 
-  ngOnInit() {}
-  isUserGuest(){
-    console.log(Parse.User.current().get("isGuest"));
+  ngOnInit() { }
+  isUserGuest() {
     return Parse.User.current().get("isGuest");
-  
+
   }
 }
 

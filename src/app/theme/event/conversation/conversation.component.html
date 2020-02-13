@@ -7,7 +7,7 @@
     <div class="conversation-full-content">Youssef DJ et Guitariste</div>
 
     <div class="conversation-see-profile">
-      <div class="conversation-see-profile-button">Voir profil</div>
+      <div *ngIf="!isGuest"  class="conversation-see-profile-button" [routerLink] ="['/profile',userB]" >Voir profil</div>
     </div>
   </div>
 
