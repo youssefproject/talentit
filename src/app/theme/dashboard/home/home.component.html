@@ -45,7 +45,7 @@
               <div class="col-xl-9 ">
                 <div class="col-xl-12 col-box-boost ">
                   <div class="dashboard-events">
-                    <div class="dashboard-title-event">Mes événements</div>
+                    <div class="dashboard-title-event">Mes événements {{theUser.get('isGuest')}}</div>
 
                     <div data-guys-beacon="section=artistfollow" id="/home/artistfollow" data-guys-frame="/home/artistfollow" class="guys-frame-home-artistfollow guys-frame">
 
@@ -56,10 +56,10 @@
 
 
 
-
+                          
                           <app-event-box *ngFor="let event of events" eventName={{event.name}} eventPlace={{event.place}}></app-event-box>
 
-                          <li class="event-box-more artist-pane" [routerLink]="['/dashboard/event/quick-start/']">
+                          <li  *ngIf="!theUser.get('isGuest')" class="event-box-more artist-pane" [routerLink]="['/dashboard/event/quick-start/']">
                             <div class="event-box-outer">
                               <div class="event-more">
                                 <img src="assets/images/newEventButton@3x.png" height="26">

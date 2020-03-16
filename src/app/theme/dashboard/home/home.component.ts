@@ -23,6 +23,7 @@ export class HomeComponent implements OnInit {
     this.parseService.getUsername().then(user => {
       //console.log("theUser", user.get("avatar"));
       this.theUser = user;
+      console.log(this.theUser);
     });
     this.parseService.getEvents().then(result => {
       console.log(result);

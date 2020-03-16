@@ -25,7 +25,7 @@
     <div class="conversation-full-overlay">
 
     </div>
-    <div class="profile-name-desc">Youssef DJ et Guitariste</div>
+    <div class="profile-name-desc">Thomas DJ et Guitariste</div>
 
 
   </div>
@@ -114,16 +114,26 @@
                 </div>
                 <div class="row">
 
-                  <div *ngIf="ownProfile" class="Modify-profile-own-button col-10" [routerLink]="['/profile/edit']">Modifier mon profile</div>
+                  <div *ngIf="ownProfile" class="Modify-profile-own-button col-10" [routerLink]="['/profile/edit']">Modifier mon profil</div>
                 </div>
 
               </div>
 
               <div class="col-xl-8">
                 <div class="row">
-                  <div  *ngIf="isGuest" class="conversation-warning">Youssef est encore disponible pour cette date.
+                  <div  *ngIf="isGuest" class="conversation-warning">Thomas est encore disponible pour cette date.
                     <span class="heavy">Réservez le dès maintenant!</span>
                   </div>
+                  </div>
+                  <div class="row" >
+                    <div class="col-4 conversation-warning" style="right : 150px;">
+                      Envoyez un message
+
+                    </div>
+                  </div>
+                  <div class="row">
+
+                  
                   <nav style="    background-color: #fff;
           border-bottom: 2px solid rgba(0,0,0,0.15);
           border-radius: 2px;
@@ -201,14 +211,14 @@
                         <div class="row" style="position: relative; padding:5px;">
                           <div class="col-2">
                             <div class="inbox-box-avatar">
-                              <img src="{{theUser.get('avatar')._url}}" height="98" width="98" />
+                              <img src="../../../assets/images/jerome.png" height="98" width="98" />
                               <!-- <img src="{{conversation.TIuserB.avatar}}" height="98" width="98" /> -->
                             </div>
                           </div>
 
                           <div class=" col-3">
                             <div class="inbox-box-center">
-                              <div class="profile-reference-writter">youssef Kriouile</div>
+                              <div class="profile-reference-writter">Jerome Salsa</div>
                               <div class="inbox-box-place profile-reference-writter" style="box-sizing: border-box; display: block;
                                      
                                       font-size: 0.8225em;
@@ -254,7 +264,7 @@
                           <div class="row" style="position:relative;">
                             <div class="profile-reference-content">
                               <div class="profile-reference-writter">
-                                Youssef est un super DJ et anime parfaitement la soirée, merci Youssef, c'était sympa de te voir et j'espére que tu réussira
+                                Thomas est un super DJ et anime parfaitement la soirée, merci Thomas, c'était sympa de te voir et j'espére que tu réussira
                                 dans ta platforme et que tu deviennes le future de l'événementiel
                               </div>
                             </div>
@@ -272,14 +282,14 @@
                         <div class="row" style="position: relative; padding:5px;">
                           <div class="col-2">
                             <div class="inbox-box-avatar">
-                              <img src="{{theUser.get('avatar')._url}}" height="98" width="98" />
+                              <img src="../../../assets/images/paga.png" height="98" width="98" />
                               <!-- <img src="{{conversation.TIuserB.avatar}}" height="98" width="98" /> -->
                             </div>
                           </div>
 
                           <div class=" col-3">
                             <div class="inbox-box-center">
-                              <div class="profile-reference-writter">youssef Kriouile</div>
+                              <div class="profile-reference-writter">Philip albert</div>
                               <div class="inbox-box-place profile-reference-writter" style="box-sizing: border-box; display: block;
                                    
                                     font-size: 0.8225em;
@@ -325,8 +335,7 @@
                           <div class="row" style="position:relative;">
                             <div class="profile-reference-content">
                               <div class="profile-reference-writter">
-                                Youssef est un super DJ et anime parfaitement la soirée, merci Youssef, c'était sympa de te voir et j'espére que tu réussira
-                                dans ta platforme et que tu deviennes le future de l'événementiel
+                                Thomas a été super, je le recommande a tout le monde, surtout demandez lui à vous jouer son morceaux à lui, il met bien de l'ambiance, J'espére te revoir à une prochiane soirée, plein de réussite :)
                               </div>
                             </div>
 
@@ -397,7 +406,7 @@
                           <div class="row" style="position:relative;">
                             <div class="profile-reference-content">
                               <div class="profile-reference-writter">
-                                Youssef est un super DJ et anime parfaitement la soirée, merci Youssef, c'était sympa de te voir et j'espére que tu réussira
+                                Thomas est un super DJ et anime parfaitement la soirée, merci Youssef, c'était sympa de te voir et j'espére que tu réussira
                                 dans ta platforme et que tu deviennes le future de l'événementiel
                               </div>
                             </div>
@@ -468,7 +477,7 @@
                           <div class="row" style="position:relative;">
                             <div class="profile-reference-content">
                               <div class="profile-reference-writter">
-                                Youssef est un super DJ et anime parfaitement la soirée, merci Youssef, c'était sympa de te voir et j'espére que tu réussira
+                                Thomas est un super DJ et anime parfaitement la soirée, merci Youssef, c'était sympa de te voir et j'espére que tu réussira
                                 dans ta platforme et que tu deviennes le future de l'événementiel
                               </div>
                             </div>
@@ -485,6 +494,9 @@
                         <iframe width="560" height="315" src="https://www.youtube.com/embed/1ozGKlOzEVc" frameborder="0" allowfullscreen></iframe>
                       </div>
                     </div>
+                  </div>
+                  <div *ngIf="actualRoute==='availability' ">
+                    <app-account-calendar></app-account-calendar>
                   </div>
 
 

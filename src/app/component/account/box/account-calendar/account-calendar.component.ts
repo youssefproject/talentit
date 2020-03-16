@@ -106,8 +106,8 @@ export class AccountCalendarComponent implements OnInit {
 
   events: CalendarEvent[] = [
     {
-      start: subDays(startOfDay(new Date()), 1),
-      end: addDays(new Date(), 1),
+      start: subDays(startOfDay(new Date()), 2),
+      end: addDays(new Date(), -1),
       title: 'Soirée Rooftop',
       color: colors.red,
       actions: this.actions

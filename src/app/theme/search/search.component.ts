@@ -74,7 +74,7 @@ export class SearchNewComponent implements OnInit, AfterViewInit {
   toastSuccess() {
     this.addToast({
       title: "",
-      msg: "Demande de devis envoyée",
+      msg: "Demande de réservation envoyée",
       timeout: 15000,
       theme: "default",
       position: "bottom-right",
@@ -145,7 +145,6 @@ export class SearchNewComponent implements OnInit, AfterViewInit {
     this.parseService.getGuest(gender).then(result => {
       console.log("getGuest ", result);
       result.forEach(element => {
-        console.log(element);
         people.push(element);
       });
     });

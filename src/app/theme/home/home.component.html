@@ -40,13 +40,13 @@
                   <div class="profile-box-title " [routerLink]="[ '/profile',theUser.id]"  >{{theUser.get('firstName')}} {{theUser.get('lastName')}} </div>
                   <div class="profile-box-button " [routerLink]="[ '/profile/edit/general'] ">Modifier mon profil</div>
                 </div>
-                <div *ngIf="isGuest" class="col-xl-12 col-box-boost m-t-20 ">
+                <!-- <div *ngIf="isGuest" class="col-xl-12 col-box-boost m-t-20 ">
                   <div class="dashboard-events ">
                     <div class="dashboard-title-event ">Call missing</div>
                     <div class="home-box-desc">No call missing</div>
 
                   </div>
-                </div>
+                </div> -->
               </div>
               <div class="col-xl-9 ">
                 <div *ngIf="isGuest" class="col-xl-12 m-b-20">
@@ -98,7 +98,7 @@
                       <div class="col-3">
                         <div class="home-box-stat">
                           <div class="home-stats-title">2</div>
-                          <div class="home-stats-desc">Devis en attentes</div>
+                          <div class="home-stats-desc">Réservation en attentes</div>
                         </div>
                       </div>
                       <div class="col-3">
@@ -119,7 +119,7 @@
 
                 <div class="col-xl-12 col-box-boost ">
                   <div class="dashboard-events ">
-                    <div class="dashboard-title-event ">Mes événements</div>
+                    <div class="dashboard-title-event ">Mes événements </div>
 
                     <div data-guys-beacon="section=artistfollow " id="/home/artistfollow " data-guys-frame="/home/artistfollow
                     " class="guys-frame-home-artistfollow guys-frame ">
@@ -135,7 +135,7 @@
                           <app-event-box *ngFor="let event of events
                     " eventName={{event.name}} eventPlace={{event.place}} [routerLink]="[ '/inbox/',event.id] "></app-event-box>
 
-                          <li class=" event-box-more artist-pane " [routerLink]="[ '/quick-start/'] ">
+                          <li *ngIf="!theUser.get('isGuest')" class=" event-box-more artist-pane " [routerLink]="[ '/quick-start/'] ">
                             <div class="event-box-outer ">
                               <div class="event-more ">
                                 <img src="assets/images/newEventButton@3x.png " height="26 ">
